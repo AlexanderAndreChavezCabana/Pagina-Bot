@@ -378,6 +378,30 @@
 	<script src="js/jquery.nicescroll.js"></script> <!-- jQuery NiceScroll -->
 	<script src="js/jquery.sticky.js"></script> <!-- jQuery Stick Menu -->
 	<script src="js/script.js"></script> <!-- All script -->
+	 </script>
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <df-messenger
+    chat-icon="https://firebasestorage.googleapis.com/v0/b/chatbotmesadep.appspot.com/o/ChatbotMesadePartes%2Fandros.png?alt=media&token=15010a6e-23b5-4aca-afa4-96bcdcf00c4f"
+    intent="WELCOME"
+    chat-title="🤖Andros"
+    agent-id="996422d8-aac0-4be5-ae4e-785ac02cbf0c"
+    language-code="es"
+    
+    ></df-messenger>
+  <script>
+    $(document).ready(function() {
+      window.addEventListener('dfMessengerLoaded', function(event) {
+        $r1 = document.querySelector("df-messenger");
+        $r2 = $r1.shadowRoot.querySelector("df-messenger-chat");
+        $r3 = $r2.shadowRoot.querySelector("df-messenger-user-input"); //for other mods
+        var sheet = new CSSStyleSheet;
+        // manage box height from here
+        sheet.replaceSync(`div.chat-wrapper[opened="true"] { height: 460px }`);
+        $r2.shadowRoot.adoptedStyleSheets = [sheet];
+      });
+
+    });
+  </script>
 
 </body>
 
