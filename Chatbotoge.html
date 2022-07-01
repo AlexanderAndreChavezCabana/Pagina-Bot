@@ -164,15 +164,41 @@
             </div>
         </div>
     </footer>
+    <style>
+            df-messenger {
+            --df-messenger-bot-message: #1ABC9C;
+            --df-messenger-button-titlebar-color:  #3498DB;
+            --df-messenger-chat-background-color: #E8F6F3;
+            --df-messenger-font-color: white;
+            --df-messenger-send-icon: #3498DB;
+            --df-messenger-user-message: #3498DB;
+            }  
+    </style>
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/c15b744a04.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      window.addEventListener('dfMessengerLoaded', function(event) {
+        $r1 = document.querySelector("df-messenger");
+        $r2 = $r1.shadowRoot.querySelector("df-messenger-chat");
+        $r3 = $r2.shadowRoot.querySelector("df-messenger-user-input"); //for other mods
+        var sheet = new CSSStyleSheet;
+        // manage box height from here
+        sheet.replaceSync(`div.chat-wrapper[opened="true"] { height: 460px }`);
+        $r2.shadowRoot.adoptedStyleSheets = [sheet];
+      });
+
+    });
+  </script>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
  
     <df-messenger
     chat-icon="https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/ogechatbot.png?alt=media&token=d3846f07-18d8-49f6-a29b-0a84ba64674d"
     intent="WELCOME"
-    chat-title="ChatBotOGE🤖"
+    chat-title="OGEBOT 🤖"
     agent-id="62a4fdec-25f9-4f21-a860-6ba96e4ae614"
     language-code="es"
     
