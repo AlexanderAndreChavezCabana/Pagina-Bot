@@ -164,7 +164,7 @@
             </div>
         </div>
     </footer>
-    <style>
+    <!-- <style>
             df-messenger {
             --df-messenger-bot-message: #1ABC9C;
             --df-messenger-button-titlebar-color:  #3498DB;
@@ -173,7 +173,7 @@
             --df-messenger-send-icon: #3498DB;
             --df-messenger-user-message: #3498DB;
             }  
-    </style>
+    </style>-->
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/c15b744a04.js" crossorigin="anonymous"></script>
@@ -187,7 +187,7 @@
         $r3 = $r2.shadowRoot.querySelector("df-messenger-user-input"); //for other mods
         var sheet = new CSSStyleSheet;
         // manage box height from here
-        sheet.replaceSync(`div.chat-wrapper[opened="true"] { height: 480px }`);
+        sheet.replaceSync(`div.chat-wrapper[opened="true"] { height: 580px }`);
         $r2.shadowRoot.adoptedStyleSheets = [sheet];
       });
 
