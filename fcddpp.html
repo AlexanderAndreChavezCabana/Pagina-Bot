@@ -164,34 +164,33 @@
             </div>
         </div>
     </footer>
-    <!-- <style>
-            df-messenger {
-            --df-messenger-bot-message: #1ABC9C;
-            --df-messenger-button-titlebar-color:  #3498DB;
-            --df-messenger-chat-background-color: #E8F6F3;
-            --df-messenger-font-color: white;
-            --df-messenger-send-icon: #3498DB;
-            --df-messenger-user-message: #3498DB;
+    <style>
+        df-messenger {
+            --df-messenger-button-titlebar-color:  linear-gradient(135deg, rgb(42, 39, 218) 0%, rgb(0, 204, 255) 100%);
             }  
-    </style>-->
+    </style>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/c15b744a04.js" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
+  <script>
     $(document).ready(function() {
         window.addEventListener('dfMessengerLoaded', function (event) {
             const dfMessenger = document.querySelector('df-messenger'); 
             const style = document.createElement('style');
-
+            $r1 = document.querySelector("df-messenger");
+            $r2 = $r1.shadowRoot.querySelector("df-messenger-chat");
+            $r3 = $r2.shadowRoot.querySelector("df-messenger-titlebar");
+            
             const nonMobileMinWidth = 501; // Breakpoint where DF Messenger switches between mobile/non-mobile styles
-
-            style.textContent = '@media screen and (min-width: ' + nonMobileMinWidth + 'px) { .chat-wrapper { max-height: 80% } }';
-
+            style.textContent = '@media screen and (min-width: ' + nonMobileMinWidth + 'px) { .chat-wrapper { max-height: 80%; transition: 300ms; --df-messenger-button-titlebar-color: purple} }';
             dfMessenger.shadowRoot.querySelector('df-messenger-chat').shadowRoot.appendChild(style);
+            
+            var sheet = new CSSStyleSheet;
+            sheet.replaceSync(`.title-wrapper { color: rgb(255, 255, 255); background: linear-gradient(135deg, rgb(42, 39, 218) 0%, rgb(0, 204, 255) 100%) } .`);
+            $r3.shadowRoot.adoptedStyleSheets = [sheet];
       });
-
     });
   </script>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
