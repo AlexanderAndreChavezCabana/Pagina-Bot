@@ -176,7 +176,7 @@
     <script src="js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-    $(document).ready(function() {
+$(document).ready(function() {
         window.addEventListener('dfMessengerLoaded', function (event) {
             const dfMessenger = document.querySelector('df-messenger'); 
             const style = document.createElement('style');
@@ -184,20 +184,20 @@
             $r2 = $r1.shadowRoot.querySelector("df-messenger-chat");
             $r3 = $r2.shadowRoot.querySelector("df-messenger-titlebar");
             $r4 = $r2.shadowRoot.querySelector("df-messenger-user-input");
-            $r5 = $r2.shadowRoot.querySelector("df-messenger-user-input");
-            
+            $r5 = $r2.shadowRoot.querySelector("df-message-list");
             
             // height
             const nonMobileMinWidth = 501; // Breakpoint where DF Messenger switches between mobile/non-mobile styles
             style.textContent = '@media screen and (min-width: ' + nonMobileMinWidth + 'px) { .chat-wrapper { max-height: 80%; }';
             dfMessenger.shadowRoot.querySelector('df-messenger-chat').shadowRoot.appendChild(style);
-            
+
             // color title
             var sheet = new CSSStyleSheet;
             sheet.replaceSync(`.title-wrapper { color: rgb(255, 255, 255); background: linear-gradient(135deg, rgb(42, 39, 218) 0%, rgb(0, 204, 255) 100%) }`);
             $r3.shadowRoot.adoptedStyleSheets = [sheet];
 
-               
+
+
             // color sendIcon replace
             var sheet1 = new CSSStyleSheet;
             sheet1.replaceSync(`#sendIcon:hover { fill: white; }`);
@@ -206,15 +206,28 @@
             var sheet3 = new CSSStyleSheet;
             sheet3.insertRule(`#sendIcon:hover { box-shadow: 1px 1px 2px 2px #ddd; transition: 400ms; border: 0.8px}`);
 
+            // background user message insert
+            var sheet5 = new CSSStyleSheet;
+            sheet5.insertRule(`#messageList .message.user-message { color: white; background: linear-gradient(135deg, rgb(42, 39, 218), rgb(0, 204, 255)) } `);
+            
+            // background chat
+            var sheet6 = new CSSStyleSheet;
+            sheet6.insertRule(`#messageList { background: white; } `);
+        
+            // background bot message
+            var sheet7 = new CSSStyleSheet;
+            sheet7.insertRule(`#messageList .message.bot-message { color: rgb(6, 19, 43); background: rgb(240, 242, 247); } `);
+            $r5.shadowRoot.adoptedStyleSheets = [sheet5, sheet6, sheet7];
+            
             // color sendIcon insert
             var sheet2 = new CSSStyleSheet;
             sheet2.insertRule(`#sendIcon { background: linear-gradient(135deg, rgb(42, 39, 218) 0%, rgb(0, 204, 255) 100%); border-radius: 3px; box-shadow: 0.5px 0.5px 1.5px 1.5px #ddd;}`);
             $r4.shadowRoot.adoptedStyleSheets = [sheet1, sheet2, sheet3];
-            
+
             var sheet4 = new CSSStyleSheet;
             sheet4.replaceSync(`button#widgetIcon { box-shadow: rgb(0 77 255 / 50%) 0px 4px 24px; }`);
             $r1.shadowRoot.adoptedStyleSheets = [sheet4];
-      });
+        });
     });
   </script>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
