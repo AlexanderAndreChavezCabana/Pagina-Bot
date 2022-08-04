@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>facultad</title>
+    <title>facultad derecho</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -176,7 +176,7 @@
     <script src="js/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-$(document).ready(function() {
+    $(document).ready(function() {
         window.addEventListener('dfMessengerLoaded', function (event) {
             const dfMessenger = document.querySelector('df-messenger'); 
             const style = document.createElement('style');
@@ -185,7 +185,10 @@ $(document).ready(function() {
             $r3 = $r2.shadowRoot.querySelector("df-messenger-titlebar");
             $r4 = $r2.shadowRoot.querySelector("df-messenger-user-input");
             $r5 = $r2.shadowRoot.querySelector("df-message-list");
+            $r6 = $r3.shadowRoot.querySelector("#dfTitlebar");
+
             
+
             // height
             const nonMobileMinWidth = 501; // Breakpoint where DF Messenger switches between mobile/non-mobile styles
             style.textContent = '@media screen and (min-width: ' + nonMobileMinWidth + 'px) { .chat-wrapper { max-height: 80%; }';
@@ -197,6 +200,13 @@ $(document).ready(function() {
             $r3.shadowRoot.adoptedStyleSheets = [sheet];
 
 
+            const imagen_bot = document.createElement('img');
+            imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/chatbot-fdccpp-unasam-aaxu.appspot.com/o/storage-chatbot-fcddpp-unasam%2Fchatbot-fcddpp-unasamA.png?alt=media&token=06c57294-30df-474c-8c33-65b994917180';
+            imagen_bot.width = 36;
+            imagen_bot.height = 36;
+
+
+            $r6.insertAdjacentElement("beforebegin", imagen_bot);
 
             // color sendIcon replace
             var sheet1 = new CSSStyleSheet;
@@ -213,21 +223,28 @@ $(document).ready(function() {
             // background chat
             var sheet6 = new CSSStyleSheet;
             sheet6.insertRule(`#messageList { background: white; } `);
-        
+            
             // background bot message
             var sheet7 = new CSSStyleSheet;
             sheet7.insertRule(`#messageList .message.bot-message { color: rgb(6, 19, 43); background: rgb(240, 242, 247); } `);
             $r5.shadowRoot.adoptedStyleSheets = [sheet5, sheet6, sheet7];
+
             
             // color sendIcon insert
             var sheet2 = new CSSStyleSheet;
             sheet2.insertRule(`#sendIcon { background: linear-gradient(135deg, rgb(42, 39, 218) 0%, rgb(0, 204, 255) 100%); border-radius: 3px; box-shadow: 0.5px 0.5px 1.5px 1.5px #ddd;}`);
             $r4.shadowRoot.adoptedStyleSheets = [sheet1, sheet2, sheet3];
+            
+            
+            
 
             var sheet4 = new CSSStyleSheet;
             sheet4.replaceSync(`button#widgetIcon { box-shadow: rgb(0 77 255 / 50%) 0px 4px 24px; }`);
             $r1.shadowRoot.adoptedStyleSheets = [sheet4];
+           
+
         });
+
     });
   </script>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
