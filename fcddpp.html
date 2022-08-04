@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>derecho</title>
+    <title>Facu</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -210,6 +210,10 @@
             var sheet2 = new CSSStyleSheet;
             sheet2.insertRule(`#sendIcon { background: linear-gradient(135deg, rgb(42, 39, 218) 0%, rgb(0, 204, 255) 100%); border-radius: 3px; box-shadow: 0.5px 0.5px 1.5px 1.5px #ddd;}`);
             $r4.shadowRoot.adoptedStyleSheets = [sheet1, sheet2, sheet3];
+            
+            var sheet4 = new CSSStyleSheet;
+            sheet4.replaceSync(`button#widgetIcon { box-shadow: rgb(0 77 255 / 50%) 0px 4px 24px; }`);
+            $r1.shadowRoot.adoptedStyleSheets = [sheet4];
       });
     });
   </script>
