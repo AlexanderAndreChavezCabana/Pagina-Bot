@@ -62,8 +62,8 @@
 
             const imagen_microphone = document.createElement('img');
             imagen_microphone.src = 'https://cdn-icons-png.flaticon.com/512/6696/6696392.png';
-            imagen_microphone.width = 41;
-            imagen_microphone.height = 41;
+            imagen_microphone.width = 26;
+            imagen_microphone.height = 26;
             imagen_microphone.style = "padding-top: 0px";
 
             btn_microphone.appendChild(imagen_microphone);
