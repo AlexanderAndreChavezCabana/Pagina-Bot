@@ -54,7 +54,7 @@
 
 
             const btn_microphone = document.createElement('button');
-            btn_microphone.style = "display:block; height: 60px; width: 60px; border-radius: 50px";
+            btn_microphone.style = "display:block; height: 60px; width: 60px; border-radius: 50px; background: white; border: 0; margin-top: 5px; margin-bottom: 5px";
 
             div_microphone.insertAdjacentElement("beforeend", span_text_bot);
             div_microphone.insertAdjacentElement("beforeend", enlace_oge);
@@ -110,28 +110,33 @@
                 const recognition = new SpeechRecognition();
                 recognition.lang = "es-PE"
                 recognition.interimResults = true;
-                // var a = document.getElementById('info');
-                // var b = document.getElementById('convert_text');
-
+                
                 recognition.addEventListener('result', e => {
                     const transcript = Array.from(e.results)
                         .map(result => result[0])
                         .map(result => result.transcript)
                         .join('')
 
-                   // a.value = transcript;
-                    // b.value = transcript;
-
+                   
                     $r9.value = transcript;
                     $r8.className = "input-box-wrapper valid";
                     $r9.focus();
-                    // document.getElementById("probando").innerHTML = transcript;
                     console.log(transcript);
                 });
                 
                 if (speech == true) {
                     recognition.start();
+                    btn_microphone.style = "display:block; height: 60px; width: 60px; border-radius: 50px; background: linear-gradient(135deg, rgb(42, 39, 218, 0.3) 0%, rgb(0, 204, 255, 0.3) 100%); border: 0; margin-top: 5px; margin-bottom: 5px";
+                
                 }
+                recognition.onend = () => {
+                    btn_microphone.style = "display:block; height: 60px; width: 60px; border-radius: 50px; background: white; margin-top: 5px; margin-bottom: 5px; border: 0";
+                    var ev = document.createEvent('Event');
+                    ev.initEvent('keypress');
+                    ev.which = ev.keyCode = 13;
+                    $r9.dispatchEvent(ev);
+                
+                };
             })
 
         });
