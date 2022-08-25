@@ -54,6 +54,7 @@
 
 
             const btn_microphone = document.createElement('button');
+            // boton
             btn_microphone.style = "display:block; height: 60px; width: 60px; border-radius: 50px; background: white; border: 0; margin-top: 5px; margin-bottom: 5px";
 
             div_microphone.insertAdjacentElement("beforeend", span_text_bot);
