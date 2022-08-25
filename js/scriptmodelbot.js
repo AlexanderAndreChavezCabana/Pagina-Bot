@@ -54,7 +54,7 @@
 
 
             const btn_microphone = document.createElement('button');
-            btn_microphone.style = "display:block; height: 60px; width: 60px; border-radius: 50px; background: white; border: 0; margin-top: 5px; margin-bottom: 5px";
+            btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; background: white; border: 0; margin-top: 5px; margin-bottom: 5px";
 
             div_microphone.insertAdjacentElement("beforeend", span_text_bot);
             div_microphone.insertAdjacentElement("beforeend", enlace_oge);
@@ -126,11 +126,11 @@
                 
                 if (speech == true) {
                     recognition.start();
-                    btn_microphone.style = "display:block; height: 60px; width: 60px; border-radius: 50px; background: linear-gradient(135deg, rgb(42, 39, 218, 0.3) 0%, rgb(0, 204, 255, 0.3) 100%); border: 0; margin-top: 5px; margin-bottom: 5px";
-                
+                    btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; border: 0; margin-top: 5px; margin-bottom: 5px; background: linear-gradient(135deg, rgb(42, 39, 218, 0.3) 0%, rgb(0, 204, 255, 0.3) 100%); ";
                 }
+
                 recognition.onend = () => {
-                    btn_microphone.style = "display:block; height: 60px; width: 60px; border-radius: 50px; background: white; margin-top: 5px; margin-bottom: 5px; border: 0";
+                    btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; background: white; border: 0; margin-top: 5px; margin-bottom: 5px";
                     var ev = document.createEvent('Event');
                     ev.initEvent('keypress');
                     ev.which = ev.keyCode = 13;
