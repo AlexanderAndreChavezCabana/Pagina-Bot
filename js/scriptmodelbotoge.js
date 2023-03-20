@@ -61,7 +61,7 @@
             div_microphone.insertAdjacentElement("beforeend", btn_microphone);
 
             const imagen_microphone = document.createElement('img');
-            imagen_microphone.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/microphone.png?alt=media&token=0992cc33-0b7e-4b53-8bf8-8d53fad0157a';
+            imagen_microphone.src = 'https://cdn-icons-png.flaticon.com/512/6696/6696392.png';
             imagen_microphone.width = 26;
             imagen_microphone.height = 26;
             imagen_microphone.style = "padding-top: 0px";
@@ -78,7 +78,7 @@
 
             // background user message insert
             var sheet5 = new CSSStyleSheet;
-            sheet5.insertRule(`#messageList .message.user-message { color: white; background: linear-gradient(135deg, rgb(37, 71, 106) 0%, rgb(20, 105, 126) 100%) } `);
+            sheet5.insertRule(`#messageList .message.user-message { color: white; background: linear-gradient(135deg, rgb(42, 39, 218), rgb(0, 204, 255)) } `);
             
             // background chat
             var sheet6 = new CSSStyleSheet;
@@ -92,7 +92,7 @@
             
             // color sendIcon insert
             var sheet2 = new CSSStyleSheet;
-            sheet2.insertRule(`#sendIcon { background: linear-gradient(135deg, rgb(37, 71, 106) 0%, rgb(20, 105, 126) 100%)); border-radius: 3px; box-shadow: 0.5px 0.5px 1.5px 1.5px #ddd;}`);
+            sheet2.insertRule(`#sendIcon { background: linear-gradient(135deg, rgb(42, 39, 218) 0%, rgb(0, 204, 255) 100%); border-radius: 3px; box-shadow: 0.5px 0.5px 1.5px 1.5px #ddd;}`);
             $r4.shadowRoot.adoptedStyleSheets = [sheet1, sheet2, sheet3];
             
             
@@ -126,7 +126,7 @@
                 
                 if (speech == true) {
                     recognition.start();
-                    btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; border: 0; margin-top: 5px; margin-bottom: 5px; background: linear-gradient(135deg, rgb(37, 71, 106, 0.7) 0%, rgb(20, 105, 126, 0.7) 230%); ";
+                    btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; border: 0; margin-top: 5px; margin-bottom: 5px; background: linear-gradient(135deg, rgb(42, 39, 218, 0.3) 0%, rgb(0, 204, 255, 0.3) 100%); ";
                 }
 
                 recognition.onend = () => {
