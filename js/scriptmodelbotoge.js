@@ -126,7 +126,7 @@
                 
                 if (speech == true) {
                     recognition.start();
-                    btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; border: 0; margin-top: 5px; margin-bottom: 5px; background: linear-gradient(135deg, rgb(37, 71, 106, 0.3) 0%, rgb(20, 105, 126, 0.3) 100%); ";
+                    btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; border: 0; margin-top: 5px; margin-bottom: 5px; background: linear-gradient(135deg, rgb(37, 71, 106, 0.7) 0%, rgb(20, 105, 126, 0.7) 230%); ";
                 }
 
                 recognition.onend = () => {
