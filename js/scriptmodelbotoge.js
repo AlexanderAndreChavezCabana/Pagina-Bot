@@ -28,7 +28,8 @@
 
 
             const imagen_bot = document.createElement('img');
-            imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/ogechatbot.png?alt=media&token=d3846f07-18d8-49f6-a29b-0a84ba64674d';
+            //imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/ogechatbot.png?alt=media&token=d3846f07-18d8-49f6-a29b-0a84ba64674d';
+            imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/astrobot.gif?alt=media&token=56609aa7-1187-4a9c-a660-4e0201402768'
             imagen_bot.width = 36;
             imagen_bot.height = 36;
 
