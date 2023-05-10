@@ -30,8 +30,29 @@
                 font-size: 22px;
                 font-weight: bold;
                 text-align: center;
-                text-shadow: rgba(0, 0, 0, 0.5) 2px 2px  }`);
+                text-shadow: rgba(0, 0, 0, 0.5) 2px 2px;
+            }
 
+            @keyframes rotation {
+                from {
+                    transform: rotate(5deg);
+                }
+                to {
+                    transform: rotate(365deg);
+                }
+            }
+
+            element.style {
+                width: 36px;
+                aspect-ratio: auto 36 / 36;
+                height: 36px;
+                border-radius: 50%;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+                filter: brightness(1.2) saturate(1.5) contrast(1.2);
+                transform: scale(1.2);
+                animation: rotation 2s infinite linear;
+            }`);
+            
             $r3.shadowRoot.adoptedStyleSheets = [sheet];
 
 
