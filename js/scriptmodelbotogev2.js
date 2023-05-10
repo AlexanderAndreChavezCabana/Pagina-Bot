@@ -24,32 +24,13 @@
             // Color title
             var sheet = new CSSStyleSheet;
             sheet.replaceSync(`.title-wrapper { 
-                    background: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%);
-                    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
-                    color: rgb(255, 255, 255);
-                    font-size: 22px;
-                    font-weight: bold;
-                    text-align: center;
-                    text-shadow: rgba(0, 0, 0, 0.5) 2px 2px;
-                    width: 36px;
-                    aspect-ratio: auto 36 / 36;
-                    height: 36px;
-                    border-radius: 50%;
-                    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
-                    filter: brightness(1.2) saturate(1.5) contrast(1.2);
-                    transform: scale(1.2);
-                    animation: rotation 2s infinite linear;
-                }
-
-                @keyframes rotation {
-                    from {
-                        transform: rotate(5deg);
-                    }
-                    to {
-                        transform: rotate(365deg);
-                    }
-                }
-            `);
+                background: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%);
+                box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+                color: rgb(255, 255, 255);
+                font-size: 22px;
+                font-weight: bold;
+                text-align: center;
+                text-shadow: rgba(0, 0, 0, 0.5) 2px 2px  }`);
             
             $r3.shadowRoot.adoptedStyleSheets = [sheet];
 
