@@ -24,7 +24,7 @@
             // Color title
             var sheet = new CSSStyleSheet;
             sheet.replaceSync(`.title-wrapper {
-                    background: rgb(28, 68, 100);
+                    background: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%);
                     background-size: 200% 200%;
                     box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
                     color: rgb(255, 255, 255);
@@ -36,15 +36,6 @@
             
             $r3.shadowRoot.adoptedStyleSheets = [sheet];
             
-            // Gradient animation with JavaScript
-            let gradientPos = 0;
-            const gradientStep = 1;
-            const gradientColors = ['rgb(28, 68, 100)', 'rgb(38, 78, 110)'];
-
-            setInterval(() => {
-                $r3.style.background = `linear-gradient(135deg, ${gradientColors[gradientPos % gradientColors.length]} 0%, ${gradientColors[(gradientPos + 1) % gradientColors.length]} 100%)`;
-                gradientPos++;
-            }, 2000);
             
             // OTRO APARTADO
 
