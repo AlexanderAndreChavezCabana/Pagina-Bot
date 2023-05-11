@@ -140,17 +140,17 @@
             var sheet4 = new CSSStyleSheet;
 
             // Definir la animación y los estilos del botón
-            const animationName = 'rotateAndScale';
+            const animationName = 'blink';
             const animationDefinition = `
                 @keyframes ${animationName} {
-                    0% { transform: scale(1) rotate(0deg); box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); }
-                    50% { transform: scale(1.2) rotate(360deg); box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); }
-                    100% { transform: scale(1) rotate(0deg); box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); }
+                    0% { box-shadow: rgb(0 77 255 / 50%) 0px 4px 24px; }
+                    50% { box-shadow: none; }
+                    100% { box-shadow: rgb(0 77 255 / 50%) 0px 4px 24px; }
                 }`;
             const buttonStyle = `
                 button#widgetIcon {
-                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-                    animation: ${animationName} 5s linear infinite;
+                    box-shadow: rgb(0 77 255 / 50%) 0px 4px 24px;
+                    animation: ${animationName} 2s linear infinite;
                 }`;
 
             // Agregar la animación y los estilos al stylesheet
