@@ -133,10 +133,31 @@
             
             
             
-
+            /*
             var sheet4 = new CSSStyleSheet;
             sheet4.replaceSync(`button#widgetIcon { box-shadow: rgb(0 77 255 / 50%) 0px 4px 24px; }`);
+            $r1.shadowRoot.adoptedStyleSheets = [sheet4];*/
+            var sheet4 = new CSSStyleSheet;
+
+            // Definir la animación y los estilos del botón
+            const animationName = 'rotateAndScale';
+            const animationDefinition = `
+                @keyframes ${animationName} {
+                    0% { transform: scale(1) rotate(0deg); box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); }
+                    50% { transform: scale(1.2) rotate(360deg); box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); }
+                    100% { transform: scale(1) rotate(0deg); box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); }
+                }`;
+            const buttonStyle = `
+                button#widgetIcon {
+                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+                    animation: ${animationName} 5s linear infinite;
+                }`;
+
+            // Agregar la animación y los estilos al stylesheet
+            sheet4.replaceSync(animationDefinition + buttonStyle);
+
             $r1.shadowRoot.adoptedStyleSheets = [sheet4];
+            
             
             //btn micro
             btn_microphone.addEventListener('click',function(){
