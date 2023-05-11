@@ -142,16 +142,16 @@
             // Definir la animación y los estilos del botón
             const animationName = 'blink';
             const animationDefinition = `
-                @keyframes ${animationName} {
-                    0% { box-shadow: rgb(0 77 255 / 85%) 0px 4px 24px; }
-                    50% { box-shadow: none; }
-                    100% { box-shadow: rgb(0 77 255 / 85%) 0px 4px 24px; }
-                }`;
-            const buttonStyle = `
-                button#widgetIcon {
-                    box-shadow: rgb(0 77 255 / 85%) 0px 4px 24px;
-                    animation: ${animationName} 2s linear infinite;
-                }`;
+            @keyframes ${animationName} {
+                0% { box-shadow: rgb(0 77 255 / 95%) 0px 0px 8px, rgb(0 77 255 / 95%) 0px 0px 8px, rgb(0 77 255 / 95%) 0px 0px 8px; }
+                50% { box-shadow: none; }
+                100% { box-shadow: rgb(0 77 255 / 95%) 0px 0px 8px, rgb(0 77 255 / 95%) 0px 0px 8px, rgb(0 77 255 / 95%) 0px 0px 8px; }
+            }`;
+        const buttonStyle = `
+            button#widgetIcon {
+                box-shadow: rgb(0 77 255 / 80%) 0px 0px 8px, rgb(0 77 255 / 80%) 0px 0px 8px, rgb(0 77 255 / 80%) 0px 0px 8px;
+                animation: ${animationName} 4s linear infinite;
+            }`;
 
             // Agregar la animación y los estilos al stylesheet
             sheet4.replaceSync(animationDefinition + buttonStyle);
