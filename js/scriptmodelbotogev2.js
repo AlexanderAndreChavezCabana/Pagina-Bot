@@ -143,13 +143,13 @@
             const animationName = 'blink';
             const animationDefinition = `
                 @keyframes ${animationName} {
-                    0% { box-shadow: rgb(0 77 255 / 50%) 0px 4px 24px; }
+                    0% { box-shadow: rgb(0 77 255 / 85%) 0px 4px 24px; }
                     50% { box-shadow: none; }
-                    100% { box-shadow: rgb(0 77 255 / 50%) 0px 4px 24px; }
+                    100% { box-shadow: rgb(0 77 255 / 85%) 0px 4px 24px; }
                 }`;
             const buttonStyle = `
                 button#widgetIcon {
-                    box-shadow: rgb(0 77 255 / 50%) 0px 4px 24px;
+                    box-shadow: rgb(0 77 255 / 85%) 0px 4px 24px;
                     animation: ${animationName} 2s linear infinite;
                 }`;
 
