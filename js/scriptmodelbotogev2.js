@@ -48,29 +48,6 @@
 
             $r6.insertAdjacentElement("beforebegin", imagen_bot);
 
-            // Agregando el evento de hover para la escala de la imagen
-            imagen_bot.addEventListener('mouseover', function() {
-              imagen_bot.style.transform = "scale(1.1)";
-            });
-
-            imagen_bot.addEventListener('mouseout', function() {
-              imagen_bot.style.transform = "scale(1.0)";
-            });
-
-            // Creando la keyframe de animación
-            const styleSheet = document.createElement('style');
-            styleSheet.textContent = `
-            @keyframes rotation {
-              from {
-                transform: rotate(0deg);
-              }
-              to {
-                transform: rotate(359deg);
-              }
-            }`;
-
-            document.head.appendChild(styleSheet);
-
             // Div for microphone
             const div_microphone = document.createElement('div');
            //  div_microphone.textContent = "Ejemplo"; 
