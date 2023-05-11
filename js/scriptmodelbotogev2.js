@@ -163,7 +163,8 @@
             const rotateAnimationDefinition = `
                 @keyframes ${rotateAnimationName} {
                     0% { transform: rotateY(0deg); }
-                    50% { transform: rotateY(180deg); }
+                    25% { transform: rotateY(180deg); }
+                    75% { transform: rotateY(180deg); }
                     100% { transform: rotateY(360deg); }
                 }`;
 
