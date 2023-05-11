@@ -24,7 +24,7 @@
             // Color title
             var sheet = new CSSStyleSheet;
             sheet.replaceSync(`.title-wrapper {
-                    background: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%);
+                    background: rgb(28, 68, 100);
                     background-size: 200% 200%;
                     box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
                     color: rgb(255, 255, 255);
