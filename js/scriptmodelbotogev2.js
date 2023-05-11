@@ -45,9 +45,13 @@
             $r6.insertAdjacentElement("beforebegin", imagen_bot);
             
             let angle = 0;
+            let direction = 1;
 
             function rotateImage() {
-                angle = (angle + 0.1) % (2 * Math.PI);
+                angle = angle + direction * 0.01;
+                if (angle > 0.2 || angle < -0.2) {
+                    direction = -direction; // Cambia la dirección cuando se alcanza cierto ángulo.
+                }
                 imagen_bot.style.transform = `rotate(${angle}rad)`;
                 requestAnimationFrame(rotateImage);
             }
