@@ -157,6 +157,21 @@
 
             // Agregar la animación y los estilos al stylesheet
             sheet4.replaceSync(animationDefinition + buttonStyle);
+            
+            // Definir la animación y los estilos de la imagen
+            const imageAnimationName = 'rotateAnimation';
+            const imageAnimationDefinition = `
+                @keyframes ${imageAnimationName} {
+                    0% { transform: rotateY(0deg); }
+                    50% { transform: rotateY(180deg); }
+                    100% { transform: rotateY(360deg); }
+            }`;
+            const imageStyle = `
+                img#widgetImage {
+                    animation: ${imageAnimationName} 10s linear infinite;
+            }`;
+
+            sheet4.replaceSync(sheet4.cssText + imageAnimationDefinition + imageStyle);
 
             $r1.shadowRoot.adoptedStyleSheets = [sheet4];
             
