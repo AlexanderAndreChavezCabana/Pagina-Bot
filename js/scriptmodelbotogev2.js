@@ -162,10 +162,8 @@
             const rotateAnimationName = 'rotateY';
             const rotateAnimationDefinition = `
                 @keyframes ${rotateAnimationName} {
-                    0% { transform: rotateY(0deg); }
-                    25% { transform: rotateY(180deg); }
-                    75% { transform: rotateY(180deg); }
-                    100% { transform: rotateY(360deg); }
+                    0%, 25% { transform: rotateY(0deg); }
+                    75%, 100% { transform: rotateY(180deg); }
                 }`;
 
             // Agregar la animación al botón
