@@ -157,7 +157,23 @@
             }`;
 
             // Agregar la animación y los estilos al stylesheet
-            sheet4.replaceSync(animationDefinition + buttonStyle);
+            // sheet4.replaceSync(animationDefinition + buttonStyle);
+            // Definir la animación de mover
+            const moveAnimationName = 'move';
+            const moveAnimationDefinition = `
+                @keyframes ${moveAnimationName} {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(100%); }
+                }`;
+
+            // Agregar la animación al botón
+            const buttonMoveStyle = `
+                button#widgetIcon {
+                    animation: ${animationName} 4s linear infinite, ${moveAnimationName} 20s linear infinite;
+            }`;
+
+            // Agregar la nueva animación y los estilos al stylesheet
+            sheet4.replaceSync(animationDefinition + buttonStyle + moveAnimationDefinition + buttonMoveStyle);
 
             $r1.shadowRoot.adoptedStyleSheets = [sheet4];
            
