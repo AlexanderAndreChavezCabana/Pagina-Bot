@@ -159,21 +159,22 @@
             // Agregar la animación y los estilos al stylesheet
             // sheet4.replaceSync(animationDefinition + buttonStyle);
             // Definir la animación de mover
-            const moveAnimationName = 'move';
-            const moveAnimationDefinition = `
-                @keyframes ${moveAnimationName} {
-                    0% { transform: translateX(0); }
-                    100% { transform: translateX(100%); }
+            // Definir la animación de giro
+            const rotateAnimationName = 'rotate';
+            const rotateAnimationDefinition = `
+                @keyframes ${rotateAnimationName} {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
                 }`;
 
             // Agregar la animación al botón
-            const buttonMoveStyle = `
+            const buttonRotateStyle = `
                 button#widgetIcon {
-                    animation: ${animationName} 4s linear infinite, ${moveAnimationName} 20s linear infinite;
+                    animation: ${animationName} 4s linear infinite, ${rotateAnimationName} 20s linear infinite;
             }`;
 
             // Agregar la nueva animación y los estilos al stylesheet
-            sheet4.replaceSync(animationDefinition + buttonStyle + moveAnimationDefinition + buttonMoveStyle);
+            sheet4.replaceSync(animationDefinition + buttonStyle + rotateAnimationDefinition + buttonRotateStyle);
 
             $r1.shadowRoot.adoptedStyleSheets = [sheet4];
            
