@@ -41,6 +41,16 @@
             imagen_bot.height = 40;
             
             $r6.insertAdjacentElement("beforebegin", imagen_bot);
+            
+            let angle = 0;
+
+            function rotateImage() {
+                angle = (angle + 0.1) % (2 * Math.PI);
+                imagen_bot.style.transform = `rotate(${angle}rad)`;
+                requestAnimationFrame(rotateImage);
+            }
+
+            rotateImage();
 
             // Div for microphone
             const div_microphone = document.createElement('div');
