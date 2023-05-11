@@ -150,11 +150,8 @@
             const buttonStyle = `
                 button#widgetIcon {
                     background: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%) 0% 0% / 200% 200%;
-                    color: #fff; /* Color del texto */
                     border: none;
-                    padding: 10px 20px;
-                    border-radius: 5px;
-                    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+                    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
                 }`;
 
             // Agregar la animación y los estilos al stylesheet
