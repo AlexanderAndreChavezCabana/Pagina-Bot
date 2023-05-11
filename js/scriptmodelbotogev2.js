@@ -39,7 +39,6 @@
             imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/ogechatbot.png?alt=media&token=d3846f07-18d8-49f6-a29b-0a84ba64674d';
             imagen_bot.width = 40;
             imagen_bot.height = 40;
-            imagen_bot.style.boxShadow = '5px 5px 15px rgba(0, 0, 0, 0.3)';
             imagen_bot.style.transition = 'all 0.5s ease';
             
             $r6.insertAdjacentElement("beforebegin", imagen_bot);
