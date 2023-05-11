@@ -23,14 +23,24 @@
 
             // Color title
             var sheet = new CSSStyleSheet;
-            sheet.replaceSync(`.title-wrapper { 
-                background: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%);
-                box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
-                color: rgb(255, 255, 255);
-                font-size: 22px;
-                font-weight: bold;
-                text-align: center;
-                text-shadow: rgba(0, 0, 0, 0.5) 2px 2px  }`);
+            sheet.replaceSync(`.title-wrapper {
+                        background: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%);
+                        background-size: 200% 200%;
+                        animation: gradient 2s linear infinite;
+                        box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+                        color: rgb(255, 255, 255);
+                        font-size: 22px;
+                        font-weight: bold;
+                        text-align: center;
+                        text-shadow: rgba(0, 0, 0, 0.5) 2px 2px
+                    }
+
+                    @keyframes gradient {
+                        0% { background-position: 0% 50%; }
+                        50% { background-position: 100% 50%; }
+                        100% { background-position: 0% 50%; }
+                    }
+                `);
             
             $r3.shadowRoot.adoptedStyleSheets = [sheet];
 
