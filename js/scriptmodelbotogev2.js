@@ -152,7 +152,7 @@
                     background: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%) 0% 0% / 200% 200%;
                     border: none;
                     box-shadow: rgb(28 68 100 / 65%) 0px 0px 13px, rgb(28, 68, 100, 0.7) 0px 0px 13px, rgb(28, 68, 100, 0.75) 0px 0px 13px;
-                    animation: ${animationName} 2s linear infinite;
+                    animation: ${animationName} 4s linear infinite;
             }`;
 
             // Agregar la animación y los estilos al stylesheet
