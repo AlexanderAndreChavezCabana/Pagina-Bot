@@ -147,11 +147,15 @@
                 50% { box-shadow: none; }
                 100% { box-shadow: rgb(0 77 255 / 95%) 0px 0px 8px, rgb(0 77 255 / 95%) 0px 0px 8px, rgb(0 77 255 / 95%) 0px 0px 8px; }
             }`;
-        const buttonStyle = `
-            button#widgetIcon {
-                box-shadow: rgb(0 77 255 / 80%) 0px 0px 8px, rgb(0 77 255 / 80%) 0px 0px 8px, rgb(0 77 255 / 80%) 0px 0px 8px;
-                animation: ${animationName} 4s linear infinite;
-            }`;
+            const buttonStyle = `
+                button#widgetIcon {
+                    background: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%) 0% 0% / 200% 200%;
+                    color: #fff; /* Color del texto */
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+                }`;
 
             // Agregar la animación y los estilos al stylesheet
             sheet4.replaceSync(animationDefinition + buttonStyle);
