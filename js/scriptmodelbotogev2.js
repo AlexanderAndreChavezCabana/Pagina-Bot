@@ -137,15 +137,16 @@
             var sheet4 = new CSSStyleSheet;
             sheet4.replaceSync(`button#widgetIcon { box-shadow: rgb(0 77 255 / 50%) 0px 4px 24px; }`);
             $r1.shadowRoot.adoptedStyleSheets = [sheet4];*/
-            var sheet4 = new CSSStyleSheet;
             
+            var sheet4 = new CSSStyleSheet;
+
             // Definir la animación y los estilos del botón
             const animationName = 'blink';
             const animationDefinition = `
                 @keyframes ${animationName} {
-                    0% { box-shadow: rgb(28 68 100 / 65%) 0px 0px 13px, rgb(28, 68, 100, 0.7) 0px 0px 13px, rgb(28, 68, 100, 0.75) 0px 0px 13px; }
-                    50% { box-shadow: rgb(28 68 100 / 40%) 0px 0px 6px, rgb(28, 68, 100, 0.4) 0px 0px 6px, rgb(28, 68, 100, 0.4) 0px 0px 6px; }
-                    100% { box-shadow: rgb(28 68 100 / 65%) 0px 0px 13px, rgb(28, 68, 100, 0.7) 0px 0px 13px, rgb(28, 68, 100, 0.75) 0px 0px 13px; }
+                0% { box-shadow: rgb(28 68 100 / 65%) 0px 0px 13px, rgb(28, 68, 100, 0.7) 0px 0px 13px, rgb(28, 68, 100, 0.75) 0px 0px 13px; }
+                50% { box-shadow: rgb(28 68 100 / 40%) 0px 0px 6px, rgb(28, 68, 100, 0.4) 0px 0px 6px, rgb(28, 68, 100, 0.4) 0px 0px 6px; }
+                100% { box-shadow: rgb(28 68 100 / 65%) 0px 0px 13px, rgb(28, 68, 100, 0.7) 0px 0px 13px, rgb(28, 68, 100, 0.75) 0px 0px 13px; }
             }`;
             const buttonStyle = `
                 button#widgetIcon {
@@ -155,21 +156,8 @@
                     animation: ${animationName} 4s linear infinite;
             }`;
 
-            // Definir la animación y los estilos de la imagen
-            const imageAnimationName = 'rotateAnimation';
-            const imageAnimationDefinition = `
-                @keyframes ${imageAnimationName} {
-                    0% { transform: rotateY(0deg); }
-                    50% { transform: rotateY(180deg); }
-                    100% { transform: rotateY(360deg); }
-            }`;
-            const imageStyle = `
-                img#widgetImage {
-                    animation: ${imageAnimationName} 10s linear infinite;
-            }`;
-
             // Agregar la animación y los estilos al stylesheet
-            sheet4.replaceSync(animationDefinition + buttonStyle + imageAnimationDefinition + imageStyle);
+            sheet4.replaceSync(animationDefinition + buttonStyle);
 
             $r1.shadowRoot.adoptedStyleSheets = [sheet4];
            
