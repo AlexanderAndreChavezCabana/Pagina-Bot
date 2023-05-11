@@ -142,17 +142,18 @@
             // Definir la animación y los estilos del botón
             const animationName = 'blink';
             const animationDefinition = `
-            @keyframes ${animationName} {
-                0% { box-shadow: rgb(0 77 255 / 80%) 0px 0px 8px, rgb(0 77 255 / 75%) 0px 0px 8px, rgb(0 77 255 / 70%) 0px 0px 8px; }
-                50% { box-shadow: none; }
-                100% { box-shadow: rgb(0 77 255 / 80%) 0px 0px 8px, rgb(0 77 255 / 75%) 0px 0px 8px, rgb(0 77 255 / 70%) 0px 0px 8px; }
+                @keyframes ${animationName} {
+                0% { box-shadow: rgb(28 68 100 / 65%) 0px 0px 13px, rgb(28, 68, 100, 0.7) 0px 0px 13px, rgb(28, 68, 100, 0.75) 0px 0px 13px; }
+                50% { box-shadow: rgb(28 68 100 / 40%) 0px 0px 6px, rgb(28, 68, 100, 0.4) 0px 0px 6px, rgb(28, 68, 100, 0.4) 0px 0px 6px; }
+                100% { box-shadow: rgb(28 68 100 / 65%) 0px 0px 13px, rgb(28, 68, 100, 0.7) 0px 0px 13px, rgb(28, 68, 100, 0.75) 0px 0px 13px; }
             }`;
             const buttonStyle = `
                 button#widgetIcon {
                     background: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%) 0% 0% / 200% 200%;
                     border: none;
-                    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
-                }`;
+                    box-shadow: rgb(28 68 100 / 65%) 0px 0px 13px, rgb(28, 68, 100, 0.7) 0px 0px 13px, rgb(28, 68, 100, 0.75) 0px 0px 13px;
+                    animation: ${animationName} 2s linear infinite;
+            }`;
 
             // Agregar la animación y los estilos al stylesheet
             sheet4.replaceSync(animationDefinition + buttonStyle);
