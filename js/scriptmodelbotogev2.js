@@ -158,13 +158,13 @@
 
             // Agregar la animación y los estilos al stylesheet
             // sheet4.replaceSync(animationDefinition + buttonStyle);
-            // Definir la animación de mover
             // Definir la animación de giro
-            const rotateAnimationName = 'rotate';
+            const rotateAnimationName = 'rotateY';
             const rotateAnimationDefinition = `
                 @keyframes ${rotateAnimationName} {
-                    0% { transform: rotate(0deg); }
-                    100% { transform: rotate(360deg); }
+                    0% { transform: rotateY(0deg); }
+                    50% { transform: rotateY(180deg); }
+                    100% { transform: rotateY(360deg); }
                 }`;
 
             // Agregar la animación al botón
