@@ -171,8 +171,6 @@
             /*--df-messenger-chat-background-color: rgb(255, 255, 255);*/
             --df-messenger-send-icon: white;
             --df-messenger-chip-color-text: red;
-            /* chat-icon="https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/ogechatbot.png?alt=media&token=d3846f07-18d8-49f6-a29b-0a84ba64674d" */
-            /* chat-icon="https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/astrobot.gif?alt=media&token=56609aa7-1187-4a9c-a660-4e0201402768" */
             }  
     </style>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -182,13 +180,27 @@
     <script type="text/javascript" src="js/scriptmodelbotogev2.js"></script>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
  
-    <df-messenger
-    chat-icon="https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/ogechatbot.png?alt=media&token=d3846f07-18d8-49f6-a29b-0a84ba64674d"
-    intent = "WELCOME"
-    chat-title="OGEBOT"
-    agent-id="62a4fdec-25f9-4f21-a860-6ba96e4ae614"
-    language-code="es"
+    <!-- ... Resto del contenido del body ... -->
+    <df-messenger id="chatbot"
+        chat-icon="https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/ogechatbot.png?alt=media&token=d3846f07-18d8-49f6-a29b-0a84ba64674d"
+        intent = "WELCOME"
+        chat-title="OGEBOT"
+        agent-id=""
+        language-code="es"
     ></df-messenger>
+    <script>
+        window.onload = function() {
+            var bots = [
+                "62a4fdec-25f9-4f21-a860-6ba96e4ae614",
+                "1f04fcc1-ff7d-4514-a9ff-034eb4f9719c",
+                "fed9205a-7338-4a0c-90b9-831fa52dc9af",
+                "45c621c0-e573-4999-98a1-a6bd48a28f18",
+                "8633a84e-531e-49c2-a0ff-dca0b4bc896c",
+            ];
+            var bot = bots[Math.floor(Math.random() * bots.length)];
+            document.getElementById('chatbot').setAttribute('agent-id', bot);
+        }
+    </script>
    
 </body>
 
