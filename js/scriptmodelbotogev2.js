@@ -144,9 +144,9 @@
             const animationName = 'blink';
             const animationDefinition = `
                 @keyframes ${animationName} {
-                0% { box-shadow: rgb(28 68 100 / 65%) 0px 0px 13px, rgb(28, 68, 100, 0.7) 0px 0px 13px, rgb(28, 68, 100, 0.75) 0px 0px 13px; }
-                50% { box-shadow: rgb(28 68 100 / 40%) 0px 0px 6px, rgb(28, 68, 100, 0.4) 0px 0px 6px, rgb(28, 68, 100, 0.4) 0px 0px 6px; }
-                100% { box-shadow: rgb(28 68 100 / 65%) 0px 0px 13px, rgb(28, 68, 100, 0.7) 0px 0px 13px, rgb(28, 68, 100, 0.75) 0px 0px 13px; }
+                0% { box-shadow: rgb(28, 68, 100, 0.45) 0px 0px 13px, rgb(28, 68, 100, 0.5) 0px 0px 13px, rgb(28, 68, 100, 0.55) 0px 0px 13px; }
+                50% { box-shadow: rgb(28, 68, 100, 0.3) 0px 0px 6px, rgb(28, 68, 100, 0.3) 0px 0px 6px, rgb(28, 68, 100, 0.3) 0px 0px 6px; }
+                100% { box-shadow: rgb(28, 68, 100, 0.45) 0px 0px 13px, rgb(28, 68, 100, 0.5) 0px 0px 13px, rgb(28, 68, 100, 0.55) 0px 0px 13px; }
             }`;
             const buttonStyle = `
                 button#widgetIcon {
