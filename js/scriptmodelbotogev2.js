@@ -162,14 +162,14 @@
             const rotateAnimationName = 'rotateY';
             const rotateAnimationDefinition = `
                 @keyframes ${rotateAnimationName} {
-                    0%, 25% { transform: rotateY(0deg); }
-                    75%, 100% { transform: rotateY(180deg); }
+                    0%, 40% { transform: rotateY(0deg); }
+                    60%, 100% { transform: rotateY(180deg); }
                 }`;
 
             // Agregar la animación al botón
             const buttonRotateStyle = `
                 button#widgetIcon {
-                    animation: ${animationName} 4s linear infinite, ${rotateAnimationName} 20s linear infinite;
+                    animation: ${animationName} 5s linear infinite, ${rotateAnimationName} 50s linear infinite;
             }`;
 
             // Agregar la nueva animación y los estilos al stylesheet
