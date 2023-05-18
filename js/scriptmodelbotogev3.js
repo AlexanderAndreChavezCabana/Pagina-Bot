@@ -198,7 +198,7 @@
             
             // AGREGAANNNNNNNNNNDOOOOOOOOOOOOOOO
             const audioIcon = document.createElement('img');
-            audioIcon.src = 'url/to/your/image'; // Por favor, cambia esto a la URL de tu imagen
+            audioIcon.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/voz%2Fbot_voz.png?alt=media&token=80f770a9-3bc5-4a45-814e-f1d3a0b42463'; // Por favor, cambia esto a la URL de tu imagen
             audioIcon.style.cursor = 'pointer'; // Cambia el cursor al pasar el mouse sobre la imagen para indicar que es interactiva
 
             audioIcon.addEventListener('click', () => {
