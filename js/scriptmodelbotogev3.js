@@ -124,30 +124,6 @@
             var sheet7 = new CSSStyleSheet;
             sheet7.insertRule(`#messageList .message.bot-message { color: rgb(6, 19, 43); background: rgb(240, 242, 247); } `);
             $r5.shadowRoot.adoptedStyleSheets = [sheet5, sheet6, sheet7];
-
-            // Insertar un icono al inicio del mensaje del bot
-            $r5.addEventListener('df-response-rendered', function(e) {
-                const messages = $r5.shadowRoot.querySelectorAll('#messageList .message.bot-message .message-content');
-                messages.forEach(message => {
-                    if (!message.innerHTML.includes('<img')) {  // Evita la inserción de múltiples iconos
-                        message.insertAdjacentHTML('afterbegin', '<img src="https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/voz%2Fbot_voz.png?alt=media&token=80f770a9-3bc5-4a45-814e-f1d3a0b42463" alt="icono del bot" style="width: 16px; height: 16px;">&nbsp;');
-                    }
-                });
-            });
-            
-            // Utiliza la Web Speech API para leer el mensaje del bot
-            let synth = window.speechSynthesis;
-            $r5.addEventListener('df-response-rendered', function(e) {
-                const messages = $r5.shadowRoot.querySelectorAll('#messageList .message.bot-message .message-content');
-                messages.forEach(message => {
-                    if (!message.hasAttribute('read')) {  // Evita la lectura múltiple del mismo mensaje
-                        let utterance = new SpeechSynthesisUtterance(message.innerText);
-                        utterance.lang = 'es-PE';
-                        synth.speak(utterance);
-                        message.setAttribute('read', '');  // Marca el mensaje como leído
-                    }
-                });
-            });
             
             // color sendIcon insert
             var sheet2 = new CSSStyleSheet;
