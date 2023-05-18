@@ -125,6 +125,26 @@
             sheet7.insertRule(`#messageList .message.bot-message { color: rgb(6, 19, 43); background: rgb(240, 242, 247); } `);
             $r5.shadowRoot.adoptedStyleSheets = [sheet5, sheet6, sheet7];
             
+            // AGREGAANDO
+            // Crear la imagen y agregarla al final de cada mensaje del bot
+            $r5.querySelectorAll('.bot-message').forEach((botMessage) => {
+              const audioIcon = document.createElement('img');
+              audioIcon.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/voz%2Fbot_voz.png?alt=media&token=80f770a9-3bc5-4a45-814e-f1d3a0b42463'; // Por favor, cambia esto a la URL de tu imagen
+              audioIcon.style.cursor = 'pointer'; // Cambia el cursor al pasar el mouse sobre la imagen para indicar que es interactiva
+
+              // Extraer el texto del mensaje del bot
+              const messageText = botMessage.textContent || botMessage.innerText;
+
+              audioIcon.addEventListener('click', () => {
+                const speech = new SpeechSynthesisUtterance(messageText);
+                window.speechSynthesis.speak(speech);
+              });
+
+              // Agregar el ícono de audio al final del mensaje del bot
+              botMessage.appendChild(audioIcon);
+            });
+            //FIN AGREGANDO
+            
             // color sendIcon insert
             var sheet2 = new CSSStyleSheet;
             sheet2.insertRule(`#sendIcon { background: linear-gradient(135deg, rgb(37, 71, 106) 0%, rgb(20, 105, 126) 100%); border-radius: 3px; box-shadow: 0.5px 0.5px 1.5px 1.5px #ddd;}`);
@@ -175,7 +195,19 @@
             sheet4.replaceSync(animationDefinition + buttonStyle + rotateAnimationDefinition + buttonRotateStyle);
 
             $r1.shadowRoot.adoptedStyleSheets = [sheet4];
-           
+            
+            // AGREGAANNNNNNNNNNDOOOOOOOOOOOOOOO
+            const audioIcon = document.createElement('img');
+            audioIcon.src = 'url/to/your/image'; // Por favor, cambia esto a la URL de tu imagen
+            audioIcon.style.cursor = 'pointer'; // Cambia el cursor al pasar el mouse sobre la imagen para indicar que es interactiva
+
+            audioIcon.addEventListener('click', () => {
+              const speech = new SpeechSynthesisUtterance(messageText);
+              window.speechSynthesis.speak(speech);
+            });
+            
+            // FIN AGREGANNNNNNNNNNNNNDOOOOOOOOOOOOOOOOOOOOOOO
+            
             //btn micro
             btn_microphone.addEventListener('click',function(){
                 var speech = true;
