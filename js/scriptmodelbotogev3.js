@@ -130,7 +130,7 @@
                 const messages = $r5.shadowRoot.querySelectorAll('#messageList .message.bot-message .message-content');
                 messages.forEach(message => {
                     if (!message.innerHTML.includes('<img')) {  // Evita la inserción de múltiples iconos
-                        message.insertAdjacentHTML('afterbegin', '<img src="ruta_al_icono.png" alt="icono del bot" style="width: 16px; height: 16px;">&nbsp;');
+                        message.insertAdjacentHTML('afterbegin', '<img src="https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/voz%2Fbot_voz.png?alt=media&token=80f770a9-3bc5-4a45-814e-f1d3a0b42463" alt="icono del bot" style="width: 16px; height: 16px;">&nbsp;');
                     }
                 });
             });
