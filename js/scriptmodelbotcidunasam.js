@@ -1,4 +1,4 @@
-    $(document).ready(function() {
+   $(document).ready(function() {
         window.addEventListener('dfMessengerLoaded', function (event) {
             const dfMessenger = document.querySelector('df-messenger'); 
             const style = document.createElement('style');
@@ -23,25 +23,52 @@
 
             // Color title
             var sheet = new CSSStyleSheet;
-            sheet.replaceSync(`.title-wrapper { 
-                background: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%);
-                box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
-                color: rgb(255, 255, 255);
-                font-size: 22px;
-                font-weight: bold;
-                text-align: center;
-                text-shadow: rgba(0, 0, 0, 0.5) 2px 2px  }`);
-
+            sheet.replaceSync(`.title-wrapper {
+                    background: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%);
+                    background-size: 200% 200%;
+                    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+                    color: rgb(255, 255, 255);
+                    font-size: 22px;
+                    font-weight: bold;
+                    text-align: center;
+                    text-shadow: rgba(0, 0, 0, 0.5) 2px 2px
+                }`);
+            
             $r3.shadowRoot.adoptedStyleSheets = [sheet];
-
+            
+            
+            // OTRO APARTADO
 
             const imagen_bot = document.createElement('img');
             imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/ogechatbot.png?alt=media&token=d3846f07-18d8-49f6-a29b-0a84ba64674d';
-            // imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/astrobot.gif?alt=media&token=56609aa7-1187-4a9c-a660-4e0201402768'
-            imagen_bot.width = 36;
-            imagen_bot.height = 36;
-
+            imagen_bot.width = 40;
+            imagen_bot.height = 40;
+            imagen_bot.style.transition = 'all 0.5s ease';
+            
             $r6.insertAdjacentElement("beforebegin", imagen_bot);
+            
+            let angle = 0;
+            let direction = 1;
+
+            function rotateImage() {
+                angle = angle + direction * 0.01;
+                if (angle > 0.2 || angle < -0.2) {
+                    direction = -direction; // Cambia la dirección cuando se alcanza cierto ángulo.
+                }
+                imagen_bot.style.transform = `rotate(${angle}rad)`;
+                requestAnimationFrame(rotateImage);
+            }
+
+            // Añade un efecto de "hover" que hace que la imagen parezca que se levanta cuando se pasa el ratón sobre ella.
+            imagen_bot.addEventListener('mouseover', function() {
+                imagen_bot.style.transform = 'scale(1.2) rotate(' + angle + 'rad)';
+            });
+
+            imagen_bot.addEventListener('mouseout', function() {
+                imagen_bot.style.transform = 'scale(1) rotate(' + angle + 'rad)';
+            });
+
+            rotateImage();
 
             // Div for microphone
             const div_microphone = document.createElement('div');
@@ -106,11 +133,50 @@
             
             
             
-
+            /*
             var sheet4 = new CSSStyleSheet;
             sheet4.replaceSync(`button#widgetIcon { box-shadow: rgb(0 77 255 / 50%) 0px 4px 24px; }`);
-            $r1.shadowRoot.adoptedStyleSheets = [sheet4];
+            $r1.shadowRoot.adoptedStyleSheets = [sheet4];*/
             
+            var sheet4 = new CSSStyleSheet;
+
+            // Definir la animación y los estilos del botón
+            const animationName = 'blink';
+            const animationDefinition = `
+                @keyframes ${animationName} {
+                0% { box-shadow: rgb(28, 68, 100, 0.35) 0px 0px 9px, rgb(28, 68, 100, 0.40) 0px 0px 10px, rgb(28, 68, 100, 0.45) 0px 0px 9px; }
+                50% { box-shadow: rgb(28, 68, 100, 0.20) 0px 0px 3px, rgb(28, 68, 100, 0.20) 0px 0px 3px, rgb(28, 68, 100, 0.20) 0px 0px 3px; }
+                100% { box-shadow: rgb(28, 68, 100, 0.35) 0px 0px 9px, rgb(28, 68, 100, 0.40) 0px 0px 9px, rgb(28, 68, 100, 0.45) 0px 0px 9px; }
+            }`;
+            const buttonStyle = `
+                button#widgetIcon {
+                    background: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%) 0% 0% / 200% 200%;
+                    border: none;
+                    box-shadow: rgb(28, 68, 100, 0.35) 0px 0px 9px, rgb(28, 68, 100, 0.4) 0px 0px 9px, rgb(28, 68, 100, 0.45) 0px 0px 9px;
+                    animation: ${animationName} 4s linear infinite;
+            }`;
+
+            // Agregar la animación y los estilos al stylesheet
+            // sheet4.replaceSync(animationDefinition + buttonStyle);
+            // Definir la animación de giro
+            const rotateAnimationName = 'rotateY';
+            const rotateAnimationDefinition = `
+                @keyframes ${rotateAnimationName} {
+                    0%, 40% { transform: rotateY(0deg); }
+                    60%, 100% { transform: rotateY(180deg); }
+                }`;
+
+            // Agregar la animación al botón
+            const buttonRotateStyle = `
+                button#widgetIcon {
+                    animation: ${animationName} 5s linear infinite, ${rotateAnimationName} 50s linear infinite;
+            }`;
+
+            // Agregar la nueva animación y los estilos al stylesheet
+            sheet4.replaceSync(animationDefinition + buttonStyle + rotateAnimationDefinition + buttonRotateStyle);
+
+            $r1.shadowRoot.adoptedStyleSheets = [sheet4];
+           
             //btn micro
             btn_microphone.addEventListener('click',function(){
                 var speech = true;
