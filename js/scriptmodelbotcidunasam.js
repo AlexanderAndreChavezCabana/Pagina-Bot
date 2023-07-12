@@ -1,4 +1,4 @@
-   $(document).ready(function() {
+    $(document).ready(function() {
         window.addEventListener('dfMessengerLoaded', function (event) {
             const dfMessenger = document.querySelector('df-messenger'); 
             const style = document.createElement('style');
