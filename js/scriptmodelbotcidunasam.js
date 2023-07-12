@@ -84,7 +84,7 @@
 
             const enlace_oge = document.createElement('a');
             enlace_oge.href = "https://www.facebook.com/Cidunasam/";
-            enlace_oge.textContent = "OGE-UNASAM";  
+            enlace_oge.textContent = "CID - UNASAM";  
             enlace_oge.style = "text-decoration:none";   
             enlace_oge.innerHTML += "&nbsp;";
 
