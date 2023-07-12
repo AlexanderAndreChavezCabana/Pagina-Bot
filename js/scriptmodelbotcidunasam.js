@@ -40,7 +40,7 @@
             // OTRO APARTADO
 
             const imagen_bot = document.createElement('img');
-            imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/ogechatbot.png?alt=media&token=d3846f07-18d8-49f6-a29b-0a84ba64674d';
+            imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/proyect1-966bf.appspot.com/o/chatbotcidunasam%2Fasistente_cidunasam.png?alt=media&token=0f9fff3d-7092-4fee-8562-2bfcc2e176be';
             imagen_bot.width = 40;
             imagen_bot.height = 40;
             imagen_bot.style.transition = 'all 0.5s ease';
@@ -83,7 +83,7 @@
             span_text_bot.innerHTML += "&nbsp;";
 
             const enlace_oge = document.createElement('a');
-            enlace_oge.href = "https://www.facebook.com/ogeunasamoficial/";
+            enlace_oge.href = "https://www.facebook.com/Cidunasam/";
             enlace_oge.textContent = "OGE-UNASAM";  
             enlace_oge.style = "text-decoration:none";   
             enlace_oge.innerHTML += "&nbsp;";
