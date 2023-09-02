@@ -93,8 +93,8 @@
             const img_fb = document.createElement('img');
             img_fb.src = "https://firebasestorage.googleapis.com/v0/b/chatbotpostgradounasam.appspot.com/o/ChatbotPostgrado%2Ffacebook.png?alt=media&token=51558296-0c67-4c34-81fb-3f52635e2e78";
             img_fb.alt = "Fb";
-            img_fb.style.width = "20px";
-            img_fb.style.height = "20px";
+            img_fb.style.width = 20;
+            img_fb.style.height = 20;
             // img_fb.style = "margin-left: 5px;"; 
             img_fb.innerHTML += "&nbsp;";
 
