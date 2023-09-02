@@ -88,6 +88,9 @@
             enlace_oge.style = "text-decoration:none; color: white; text-font:bold;";   
             enlace_oge.innerHTML += "&nbsp;";
 
+            // Agregando la imagen
+            enlace_oge.innerHTML += '<img src="https://firebasestorage.googleapis.com/v0/b/chatbotpostgradounasam.appspot.com/o/ChatbotPostgrado%2Ffacebook.png?alt=media&token=51558296-0c67-4c34-81fb-3f52635e2e78" alt="Fb">';
+
 
             const btn_microphone = document.createElement('button');
             btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; background: white; border: 0; margin-top: 5px; margin-bottom: 5px";
