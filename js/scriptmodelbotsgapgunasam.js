@@ -84,7 +84,7 @@
 
             const enlace_sgapg = document.createElement('a');
             enlace_sgapg.href = "https://www.facebook.com/epgunasam2019/";
-            enlace_sgapg.textContent = "&nbsp;Chatear con Postgrado";  
+            enlace_sgapg.textContent = "Chatear con Postgrado";  
             enlace_sgapg.style = "text-decoration:none; color: white; text-font:bold;";
             enlace_sgapg.target = "_blank";
             enlace_sgapg.innerHTML += "&nbsp;";
@@ -95,7 +95,7 @@
             img_fb.alt = "Fb";
             img_fb.style.width = 20;
             img_fb.style.height = 20;
-            // img_fb.style = "margin-left: 5px;"; 
+            img_fb.style = "margin-right: 5px;"; 
             img_fb.innerHTML += "&nbsp;";
 
             const btn_microphone = document.createElement('button');
