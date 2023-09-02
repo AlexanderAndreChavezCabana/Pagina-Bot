@@ -91,7 +91,7 @@
 
             // Imagen de Facebook
             const img_fb = document.createElement('img');
-            img_fb.src = "https://firebasestorage.googleapis.com/v0/b/chatbotpostgradounasam.appspot.com/o/ChatbotPostgrado%2Ffacebook.png?alt=media&token=51558296-0c67-4c34-81fb-3f52635e2e78";
+            img_fb.src = "https://firebasestorage.googleapis.com/v0/b/chatbotpostgradounasam.appspot.com/o/ChatbotPostgrado%2Ffacebook.png?alt=media&token=ceda8a36-d780-444b-aff5-3c5e098e3ce4";
             img_fb.alt = "Fb";
             img_fb.style.width = 20;
             img_fb.style.height = 20;
