@@ -86,7 +86,7 @@
             enlace_sgapg.href = "https://www.facebook.com/epgunasam2019/";
             enlace_sgapg.textContent = "Chatear con Postgrado";  
             enlace_sgapg.style = "text-decoration:none; color: white; text-font:bold;";
-            enlace.target = "_blank";
+            enlace_sgapg.target = "_blank";
             enlace_sgapg.innerHTML += "&nbsp;";
 
             // Imagen de Facebook
