@@ -79,12 +79,12 @@
             
             // Span for microphone
             const span_text_bot = document.createElement('span');
-            span_text_bot.textContent = "Chat online";
+            span_text_bot.textContent = "Chatear en facebook";
             span_text_bot.innerHTML += "&nbsp;";
 
             const enlace_oge = document.createElement('a');
-            enlace_oge.href = "https://www.facebook.com/Cidunasam/";
-            enlace_oge.textContent = "CID - UNASAM";  
+            enlace_oge.href = "https://www.facebook.com/epgunasam2019/";
+            enlace_oge.textContent = "Postgrado - UNASAM";  
             enlace_oge.style = "text-decoration:none";   
             enlace_oge.innerHTML += "&nbsp;";
 
@@ -114,7 +114,7 @@
 
             // background user message insert
             var sheet5 = new CSSStyleSheet;
-            sheet5.insertRule(`#messageList .message.user-message { color: white; background: linear-gradient(135deg, rgb(37, 71, 106), rgb(20, 105, 126)) } `);
+            sheet5.insertRule(`#messageList .message.user-message { color: white; background: linear-gradient(135deg, rgb(127, 0, 0) 0%, rgb(170, 0, 48) 100%) } `);
             
             // background chat
             var sheet6 = new CSSStyleSheet;
@@ -128,7 +128,7 @@
             
             // color sendIcon insert
             var sheet2 = new CSSStyleSheet;
-            sheet2.insertRule(`#sendIcon { background: linear-gradient(135deg, rgb(37, 71, 106) 0%, rgb(20, 105, 126) 100%); border-radius: 3px; box-shadow: 0.5px 0.5px 1.5px 1.5px #ddd;}`);
+            sheet2.insertRule(`#sendIcon { background: linear-gradient(135deg, rgb(127, 0, 0) 0%, rgb(170, 0, 48) 100%); border-radius: 3px; box-shadow: 0.5px 0.5px 1.5px 1.5px #ddd;}`);
             $r4.shadowRoot.adoptedStyleSheets = [sheet1, sheet2, sheet3];
             
             
@@ -150,7 +150,7 @@
             }`;
             const buttonStyle = `
                 button#widgetIcon {
-                    background: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%) 0% 0% / 200% 200%;
+                    background: linear-gradient(135deg, rgb(127, 0, 0) 0%, rgb(80, 0, 20) 100%);
                     border: none;
                     box-shadow: rgb(28, 68, 100, 0.35) 0px 0px 9px, rgb(28, 68, 100, 0.4) 0px 0px 9px, rgb(28, 68, 100, 0.45) 0px 0px 9px;
                     animation: ${animationName} 4s linear infinite;
@@ -201,7 +201,7 @@
                 
                 if (speech == true) {
                     recognition.start();
-                    btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; border: 0; margin-top: 5px; margin-bottom: 5px; background: linear-gradient(135deg, rgb(37, 71, 106, 0.7) 0%, rgb(20, 105, 126, 0.7) 100%); ";
+                    btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; border: 0; margin-top: 5px; margin-bottom: 5px; background: linear-gradient(135deg, rgb(127, 0, 0, 0.7) 0%, rgb(170, 0, 48, 0.7) 100%); ";
                 }
 
                 recognition.onend = () => {
