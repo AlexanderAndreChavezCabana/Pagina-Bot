@@ -73,18 +73,18 @@
             // Div for microphone
             const div_microphone = document.createElement('div');
            //  div_microphone.textContent = "Ejemplo"; 
-            div_microphone.style="border-top-color: black;background: rgb(240, 242, 247);margin: 0 auto; display: flex; justify-content: center; align-items: center;"
+            div_microphone.style="border-top-color: black;background: linear-gradient(135deg, rgb(127, 0, 0) 0%, rgb(80, 0, 20) 100%) 0% 0% / 200% 200%;margin: 0 auto; display: flex; justify-content: center; align-items: center;font-size: 14px;font-weight: bold;    text-shadow: rgba(0, 0, 0, 0.5) 2px 2px;box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;"
             
             $r7.insertAdjacentElement("afterend", div_microphone);
             
             // Span for microphone
             const span_text_bot = document.createElement('span');
-            span_text_bot.textContent = "Chatear en facebook";
-            span_text_bot.innerHTML += "&nbsp;";
+            // span_text_bot.textContent = "Chatear en facebook";
+            // span_text_bot.innerHTML += "&nbsp;";
 
             const enlace_oge = document.createElement('a');
             enlace_oge.href = "https://www.facebook.com/epgunasam2019/";
-            enlace_oge.textContent = "Postgrado - UNASAM";  
+            enlace_oge.textContent = "Chatear con Postgrado";  
             enlace_oge.style = "text-decoration:none; color: white; text-font:bold;";   
             enlace_oge.innerHTML += "&nbsp;";
 
