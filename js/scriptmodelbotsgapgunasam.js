@@ -85,7 +85,7 @@
             const enlace_oge = document.createElement('a');
             enlace_oge.href = "https://www.facebook.com/epgunasam2019/";
             enlace_oge.textContent = "Postgrado - UNASAM";  
-            enlace_oge.style = "text-decoration:none";   
+            enlace_oge.style = "text-decoration:none; color: white; text-font:bold;";   
             enlace_oge.innerHTML += "&nbsp;";
 
 
