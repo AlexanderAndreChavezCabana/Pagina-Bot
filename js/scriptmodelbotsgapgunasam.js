@@ -89,10 +89,10 @@
             enlace_sgapg.innerHTML += "&nbsp;";
 
             // Imagen de Facebook
-            const img = document.createElement('img_fb');
-            img.src = "https://firebasestorage.googleapis.com/v0/b/chatbotpostgradounasam.appspot.com/o/ChatbotPostgrado%2Ffacebook.png?alt=media&token=51558296-0c67-4c34-81fb-3f52635e2e78";
-            img.alt = "Fb";
-            img.style = "margin-left: 5px;"; 
+            const img_fb = document.createElement('img');
+            img_fb.src = "https://firebasestorage.googleapis.com/v0/b/chatbotpostgradounasam.appspot.com/o/ChatbotPostgrado%2Ffacebook.png?alt=media&token=51558296-0c67-4c34-81fb-3f52635e2e78";
+            img_fb.alt = "Fb";
+            img_fb.style = "margin-left: 5px;"; 
 
             const btn_microphone = document.createElement('button');
             btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; background: white; border: 0; margin-top: 5px; margin-bottom: 5px";
