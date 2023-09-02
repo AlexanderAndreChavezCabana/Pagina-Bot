@@ -82,21 +82,24 @@
             // span_text_bot.textContent = "Chatear en facebook";
             // span_text_bot.innerHTML += "&nbsp;";
 
-            const enlace_oge = document.createElement('a');
-            enlace_oge.href = "https://www.facebook.com/epgunasam2019/";
-            enlace_oge.textContent = "Chatear con Postgrado";  
-            enlace_oge.style = "text-decoration:none; color: white; text-font:bold;";   
-            enlace_oge.innerHTML += "&nbsp;";
+            const enlace_sgapg = document.createElement('a');
+            enlace_sgapg.href = "https://www.facebook.com/epgunasam2019/";
+            enlace_sgapg.textContent = "Chatear con Postgrado";  
+            enlace_sgapg.style = "text-decoration:none; color: white; text-font:bold;";   
+            enlace_sgapg.innerHTML += "&nbsp;";
 
-            // Agregando la imagen
-            enlace_oge.innerHTML += '<img src="https://firebasestorage.googleapis.com/v0/b/chatbotpostgradounasam.appspot.com/o/ChatbotPostgrado%2Ffacebook.png?alt=media&token=51558296-0c67-4c34-81fb-3f52635e2e78" alt="Fb">';
-
+            // Imagen de Facebook
+            const img = document.createElement('img_fb');
+            img.src = "https://firebasestorage.googleapis.com/v0/b/chatbotpostgradounasam.appspot.com/o/ChatbotPostgrado%2Ffacebook.png?alt=media&token=51558296-0c67-4c34-81fb-3f52635e2e78";
+            img.alt = "Fb";
+            img.style = "margin-left: 5px;"; 
 
             const btn_microphone = document.createElement('button');
             btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; background: white; border: 0; margin-top: 5px; margin-bottom: 5px";
 
             div_microphone.insertAdjacentElement("beforeend", span_text_bot);
-            div_microphone.insertAdjacentElement("beforeend", enlace_oge);
+            div_microphone.insertAdjacentElement("beforeend", img_fb);
+            div_microphone.insertAdjacentElement("beforeend", enlace_sgapg);
             div_microphone.insertAdjacentElement("beforeend", btn_microphone);
 
             const imagen_microphone = document.createElement('img');
