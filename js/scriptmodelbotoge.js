@@ -13,18 +13,36 @@
             $r9 = $r4.shadowRoot.querySelector(".input-container .input-box-wrapper input");
             
                 
-            // Scroll
+            // -------------------------------------------------
+            let lastVisibleMessage = null;
+            
             const messageListShadowRoot = $r5.shadowRoot;
             const chatScrollContainer = messageListShadowRoot.querySelector('#messageList');
-            const observer = new MutationObserver((mutationsList) => {
-                for(let mutation of mutationsList) {
-                    if (mutation.type === 'childList') {
-                        chatScrollContainer.scrollTop = chatScrollContainer.scrollTop;
+            chatScrollContainer.addEventListener('scroll', function() {
+                const messages = chatScrollContainer.querySelectorAll('.message');
+                for (let i = messages.length - 1; i >= 0; i--) {
+                    const message = messages[i];
+                    const messageRect = message.getBoundingClientRect();
+                    const containerRect = chatScrollContainer.getBoundingClientRect();
+                    if (messageRect.bottom <= containerRect.bottom) {
+                        lastVisibleMessage = message;
+                        break;
                     }
                 }
             });
+    
+            const observer = new MutationObserver((mutationsList) => {
+                for (let mutation of mutationsList) {
+                    if (mutation.type === 'childList' && lastVisibleMessage) {
+                        const newScrollTop = lastVisibleMessage.offsetTop + lastVisibleMessage.clientHeight - chatScrollContainer.clientHeight;
+                        chatScrollContainer.scrollTop = newScrollTop;
+                    }
+                }
+            });
+    
             const config = { attributes: false, childList: true, subtree: true };
             observer.observe(chatScrollContainer, config);
+            // -------------------------------------------------
 
 
             // Height
