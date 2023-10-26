@@ -13,7 +13,18 @@
             $r9 = $r4.shadowRoot.querySelector(".input-container .input-box-wrapper input");
             
                 
-
+            // Scroll
+            const messageListShadowRoot = $r5.shadowRoot;
+            const chatScrollContainer = messageListShadowRoot.querySelector('#messageList');
+            const observer = new MutationObserver((mutationsList) => {
+                for(let mutation of mutationsList) {
+                    if (mutation.type === 'childList') {
+                        chatScrollContainer.scrollTop = chatScrollContainer.scrollTop;
+                    }
+                }
+            });
+            const config = { attributes: false, childList: true, subtree: true };
+            observer.observe(chatScrollContainer, config);
 
 
             // Height
