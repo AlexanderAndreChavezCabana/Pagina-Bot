@@ -66,7 +66,7 @@
             $r3.shadowRoot.adoptedStyleSheets = [sheet];
             
             
-            // OTRO APARTADO
+            // Image Bot
 
             const imagen_bot = document.createElement('img');
             imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotinvestigacion.appspot.com/o/bot.png?alt=media&token=804ec32f-154b-4688-82ee-b1698d32bc47';
