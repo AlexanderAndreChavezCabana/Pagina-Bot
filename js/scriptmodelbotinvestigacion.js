@@ -69,7 +69,7 @@
             // OTRO APARTADO
 
             const imagen_bot = document.createElement('img');
-            imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotinvestigacion.appspot.com/o/asistente.png?alt=media&token=8de1dfeb-4c6e-4dba-8f45-275641e36635';
+            imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotinvestigacion.appspot.com/o/bot.png?alt=media&token=804ec32f-154b-4688-82ee-b1698d32bc47';
             imagen_bot.width = 40;
             imagen_bot.height = 40;
             imagen_bot.style.transition = 'all 0.5s ease';
