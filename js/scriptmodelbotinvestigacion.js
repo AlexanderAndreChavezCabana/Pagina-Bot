@@ -24,7 +24,7 @@
             // Color title
             var sheet = new CSSStyleSheet;
             sheet.replaceSync(`.title-wrapper {
-                    background: linear-gradient(135deg, rgb(127, 0, 0) 0%, rgb(80 0 20) 100%);
+                    background: linear-gradient(135deg, rgb(37 99 235) 0%, rgb(29 78 216) 100%);
                     background-size: 200% 200%;
                     box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
                     color: rgb(255, 255, 255);
@@ -73,7 +73,7 @@
             // Div for microphone
             const div_microphone = document.createElement('div');
            //  div_microphone.textContent = "Ejemplo"; 
-            div_microphone.style="border-top-color: black;background: linear-gradient(135deg, rgb(127, 0, 0) 0%, rgb(80, 0, 20) 100%) 0% 0% / 200% 200%;margin: 0 auto; display: flex; justify-content: center; align-items: center;font-size: 15px;font-weight: bold;    text-shadow: rgba(0, 0, 0, 0.5) 2px 2px;box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;"
+            div_microphone.style="border-top-color: black;background: linear-gradient(135deg, rgb(37 99 235) 0%, rgb(29 78 216) 100%) 0% 0% / 200% 200%;margin: 0 auto; display: flex; justify-content: center; align-items: center;font-size: 15px;font-weight: bold;    text-shadow: rgba(0, 0, 0, 0.5) 2px 2px;box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;"
             
             $r7.insertAdjacentElement("afterend", div_microphone);
             
@@ -124,7 +124,7 @@
 
             // background user message insert
             var sheet5 = new CSSStyleSheet;
-            sheet5.insertRule(`#messageList .message.user-message { color: white; background: linear-gradient(135deg, rgb(127, 0, 0) 0%, rgb(170, 0, 48) 100%) } `);
+            sheet5.insertRule(`#messageList .message.user-message { color: white; background: linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(37, 99, 235) 100%) } `);
             
             // background chat
             var sheet6 = new CSSStyleSheet;
@@ -132,7 +132,7 @@
             
             // background bot message
             var sheet7 = new CSSStyleSheet;
-            sheet7.insertRule(`#messageList .message.bot-message { color: rgb(6, 19, 43); background: rgb(240, 242, 247); } `);
+            sheet7.insertRule(`#messageList .message.bot-message { color: rgb(6, 19, 43); background: rgb(239, 246, 255); } `);
             $r5.shadowRoot.adoptedStyleSheets = [sheet5, sheet6, sheet7];
 
             
@@ -160,7 +160,7 @@
             }`;
             const buttonStyle = `
                 button#widgetIcon {
-                    background: linear-gradient(135deg, rgb(127, 0, 0) 0%, rgb(80, 0, 20) 100%);
+                    background: linear-gradient(135deg, rgb(37, 99, 235) 0%, rgb(30, 64, 175) 100%);
                     border: none;
                     box-shadow: rgb(28, 68, 100, 0.35) 0px 0px 9px, rgb(28, 68, 100, 0.4) 0px 0px 9px, rgb(28, 68, 100, 0.45) 0px 0px 9px;
                     animation: ${animationName} 4s linear infinite;
