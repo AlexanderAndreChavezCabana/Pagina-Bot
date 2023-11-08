@@ -138,7 +138,7 @@
             
             // color sendIcon insert
             var sheet2 = new CSSStyleSheet;
-            sheet2.insertRule(`#sendIcon { background: linear-gradient(135deg, rgb(127, 0, 0) 0%, rgb(170, 0, 48) 100%); border-radius: 3px; box-shadow: 0.5px 0.5px 1.5px 1.5px #ddd;}`);
+            sheet2.insertRule(`#sendIcon { background: linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(37, 99, 235) 100%); border-radius: 3px; box-shadow: 0.5px 0.5px 1.5px 1.5px #ddd;}`);
             $r4.shadowRoot.adoptedStyleSheets = [sheet1, sheet2, sheet3];
             
             
