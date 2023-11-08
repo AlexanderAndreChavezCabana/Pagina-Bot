@@ -69,7 +69,7 @@
             // Image Bot
 
             const imagen_bot = document.createElement('img');
-            imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotinvestigacion.appspot.com/o/FluentEmojiRobot.png?alt=media&token=af1e0a29-eb1a-459e-b2b6-1348da67cb78';
+            imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotinvestigacion.appspot.com/o/pom-bot.gif?alt=media&token=b3bd2e67-243f-4de5-8657-37442939ee5c';
             imagen_bot.width = 40;
             imagen_bot.height = 40;
             imagen_bot.style.transition = 'all 0.5s ease';
