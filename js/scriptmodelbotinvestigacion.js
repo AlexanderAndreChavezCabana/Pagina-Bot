@@ -14,6 +14,7 @@
             
             // SCROLL
             // -------------------------------------------------
+            /*
             let lastVisibleMessage = null;
             
             const messageListShadowRoot = $r5.shadowRoot;
@@ -41,7 +42,7 @@
             });
     
             const config = { attributes: false, childList: true, subtree: true };
-            observer.observe(chatScrollContainer, config);
+            observer.observe(chatScrollContainer, config); */
             // -------------------------------------------------
 
 
