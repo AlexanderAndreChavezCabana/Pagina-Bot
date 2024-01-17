@@ -201,7 +201,18 @@
                     justify-content: center;
                     align-items: center;
                     position: relative; 
-            }`;
+                    }
+                
+                button#widgetIcon .df-chat-icon {
+                    /* Asumiendo que df-chat-icon es una clase aplicada al contenido dentro de #widgetIcon */
+                    height: 40px;
+                    width: 40px;
+                    margin: auto; /* Esto centrará el icono si #widgetIcon es un contenedor flex */
+                    transition: opacity 0.5s;
+                    /* Asegúrate de que el icono no tenga ningún posicionamiento absoluto que pueda interferir */
+    }
+                    
+            `;
 
             // Agregar la animación y los estilos al stylesheet
             // sheet4.replaceSync(animationDefinition + buttonStyle);
