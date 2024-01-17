@@ -216,6 +216,12 @@
                 }
             `;
 
+            const closeSvgStyle = `
+                button#widgetIcon div #closeSvg {
+                    position: static;
+                }
+            `;
+
 
             // Agregar la animación y los estilos al stylesheet
             // sheet4.replaceSync(animationDefinition + buttonStyle);
