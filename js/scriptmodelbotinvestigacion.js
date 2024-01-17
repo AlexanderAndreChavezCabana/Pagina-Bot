@@ -113,7 +113,7 @@
             // span_text_bot.innerHTML += "&nbsp;";
 
             // Chatear con el personal
-            const enlace_sgapg = document.createElement('a');
+          /*  const enlace_sgapg = document.createElement('a');
             enlace_sgapg.href = "https://www.facebook.com/epgunasam2019/";
             enlace_sgapg.textContent = "Chatear con el personal";  
             enlace_sgapg.style = "text-decoration:none; color: white; text-font:bold;";
@@ -121,7 +121,7 @@
             enlace_sgapg.innerHTML += "&nbsp;";*/
 
             // Imagen de Facebook
-            const img_fb = document.createElement('img');
+            /* const img_fb = document.createElement('img');
             img_fb.src = "https://firebasestorage.googleapis.com/v0/b/chatbotpostgradounasam.appspot.com/o/ChatbotPostgrado%2Ffacebook.png?alt=media&token=ceda8a36-d780-444b-aff5-3c5e098e3ce4";
             img_fb.alt = "Fb";
             img_fb.style.width = 20;
@@ -132,9 +132,9 @@
             const btn_microphone = document.createElement('button');
             btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; background: white; border: 0; margin-top: 5px; margin-bottom: 5px";
 
-            div_microphone.insertAdjacentElement("beforeend", span_text_bot);
+           /* div_microphone.insertAdjacentElement("beforeend", span_text_bot);
             div_microphone.insertAdjacentElement("beforeend", img_fb);
-            div_microphone.insertAdjacentElement("beforeend", enlace_sgapg);
+            div_microphone.insertAdjacentElement("beforeend", enlace_sgapg); */
             div_microphone.insertAdjacentElement("beforeend", btn_microphone);
 
             const imagen_microphone = document.createElement('img');
