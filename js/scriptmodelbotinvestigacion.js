@@ -203,6 +203,21 @@
                     position: relative; 
                     }`;
 
+            // Estilos para centrar .df-chat-icon dentro de #widgetIcon
+            const chatIconStyle = `
+                button#widgetIcon .df-chat-icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 40px;
+                    width: 40px;
+                    margin: auto; // Centra el icono en Flexbox si es necesario
+                    transition: opacity 0.5s;
+                    /* Asegúrate de que el icono no tenga ningún posicionamiento absoluto que pueda interferir */
+                }
+            `;
+
+
             // Agregar la animación y los estilos al stylesheet
             // sheet4.replaceSync(animationDefinition + buttonStyle);
             // Definir la animación de giro
@@ -220,7 +235,7 @@
             }`;
 
             // Agregar la nueva animación y los estilos al stylesheet
-            sheet4.replaceSync(animationDefinition + buttonStyle + rotateAnimationDefinition + buttonRotateStyle);
+            sheet4.replaceSync(animationDefinition + buttonStyle + chatIconStyle + rotateAnimationDefinition + buttonRotateStyle);
 
             $r1.shadowRoot.adoptedStyleSheets = [sheet4];
            
