@@ -132,9 +132,9 @@
             const btn_microphone = document.createElement('button');
             btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; background: white; border: 0; margin-top: 5px; margin-bottom: 5px";
 
-            div_microphone.insertAdjacentElement("beforeend", span_text_bot);
+            /* div_microphone.insertAdjacentElement("beforeend", span_text_bot);
             div_microphone.insertAdjacentElement("beforeend", img_fb);
-            div_microphone.insertAdjacentElement("beforeend", enlace_sgapg);
+            div_microphone.insertAdjacentElement("beforeend", enlace_sgapg); */
             div_microphone.insertAdjacentElement("beforeend", btn_microphone);
 
             const imagen_microphone = document.createElement('img');
