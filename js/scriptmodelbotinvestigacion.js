@@ -200,7 +200,6 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    position: relative; 
                     }`;
 
             // Estilos para centrar .df-chat-icon dentro de #widgetIcon
