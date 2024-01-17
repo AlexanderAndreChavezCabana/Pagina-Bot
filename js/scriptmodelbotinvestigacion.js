@@ -205,14 +205,14 @@
             // Estilos para centrar .df-chat-icon dentro de #widgetIcon
             const chatIconStyle = `
                 button#widgetIcon .df-chat-icon {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: 40px;
-                    width: 40px;
-                    margin: auto; // Centra el icono en Flexbox si es necesario
+                    position: absolute;    /* Posicionamiento absoluto respecto a su contenedor relativo */
+                    top: 50%;             /* Posicionamiento del 50% desde la parte superior del contenedor */
+                    left: 50%;            /* Posicionamiento del 50% desde el lado izquierdo del contenedor */
+                    transform: translate(-50%, -50%); /* Desplazamiento hacia atrás en X y Y en un 50% para centrar el elemento */
+                    height: 45px;
+                    width: 45px;
                     transition: opacity 0.5s;
-                    /* Asegúrate de que el icono no tenga ningún posicionamiento absoluto que pueda interferir */
+                    padding-bottom: 6px;
                 }
             `;
 
