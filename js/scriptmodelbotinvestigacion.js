@@ -195,6 +195,11 @@
                     border: none;
                     box-shadow: rgb(28, 68, 100, 0.35) 0px 0px 9px, rgb(28, 68, 100, 0.4) 0px 0px 9px, rgb(28, 68, 100, 0.45) 0px 0px 9px;
                     animation: ${animationName} 4s linear infinite;
+                    height: 70px; /* Nuevo tamaño */
+                    width: 70px; /* Nuevo tamaño */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
             }`;
 
             // Agregar la animación y los estilos al stylesheet
