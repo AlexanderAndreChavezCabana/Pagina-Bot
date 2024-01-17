@@ -200,6 +200,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    position: relative; 
             }`;
 
             // Agregar la animación y los estilos al stylesheet
