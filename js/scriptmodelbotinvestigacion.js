@@ -240,7 +240,7 @@
             }`;
 
             // Agregar la nueva animación y los estilos al stylesheet
-            sheet4.replaceSync(animationDefinition + buttonStyle + chatIconStyle + rotateAnimationDefinition + buttonRotateStyle);
+            sheet4.replaceSync(animationDefinition + buttonStyle + chatIconStyle + rotateAnimationDefinition + buttonRotateStyle + closeSvgStyle);
 
             $r1.shadowRoot.adoptedStyleSheets = [sheet4];
            
