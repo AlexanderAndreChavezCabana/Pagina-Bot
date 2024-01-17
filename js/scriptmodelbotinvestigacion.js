@@ -138,7 +138,7 @@
             div_microphone.insertAdjacentElement("beforeend", btn_microphone);
 
             const imagen_microphone = document.createElement('img');
-            imagen_microphone.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotpostgradounasam.appspot.com/o/ChatbotPostgrado%2Fmicrophone.png?alt=media&token=f2fe19fe-5883-4649-a963-0ebee46e40ab';
+            imagen_microphone.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/voz-de-google.png?alt=media&token=ec2eb92c-be71-4d62-86cd-2d3580d9d0e7';
             imagen_microphone.width = 26;
             imagen_microphone.height = 26;
             imagen_microphone.style = "padding-top: 0px";
