@@ -249,6 +249,7 @@
 
                 recognition.onend = () => {
                     btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; background: white; border: 0; margin-top: 5px; margin-bottom: 5px";
+                    imagen_bot.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotinvestigacion.appspot.com/o/pom-bot.gif?alt=media&token=b3bd2e67-243f-4de5-8657-37442939ee5c';
                     var ev = document.createEvent('Event');
                     ev.initEvent('keypress');
                     ev.which = ev.keyCode = 13;
