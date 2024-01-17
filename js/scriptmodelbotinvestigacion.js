@@ -242,7 +242,9 @@
                 
                 if (speech == true) {
                     recognition.start();
-                    btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; border: 0; margin-top: 5px; margin-bottom: 5px; background: linear-gradient(135deg, rgb(127, 0, 0, 0.7) 0%, rgb(170, 0, 48, 0.7) 100%); ";
+                    // btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; border: 0; margin-top: 5px; margin-bottom: 5px; background: linear-gradient(135deg, rgb(127, 0, 0, 0.7) 0%, rgb(170, 0, 48, 0.7) 100%); ";
+                    btn_microphone.style = "display:block; height: 40px; width: 40px; border-radius: 50px; border: 0; margin-top: 5px; margin-bottom: 5px; "
+                    imagen_microphone.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/google_voz.gif?alt=media&token=e244b172-0328-4bac-8516-1e2be0859605';
                 }
 
                 recognition.onend = () => {
