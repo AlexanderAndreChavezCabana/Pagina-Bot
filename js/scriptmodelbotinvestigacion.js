@@ -64,6 +64,11 @@
                 });
     
                 rotateImage();
+                console.log("Se cargo la imagen del bot");
+            }
+            else
+            {
+                console.log("Ya existe");
             }
 
             // Verifica si ya existe el div para el micrófono
@@ -86,7 +91,7 @@
                 
                 btn_microphone.appendChild(imagen_microphone);
                 div_microphone.insertAdjacentElement("beforeend", btn_microphone);
-            
+                console.log("Se creo la división del micrófono");
 
                 // color sendIcon replace
                 var sheet1 = new CSSStyleSheet;
@@ -215,6 +220,9 @@
                     
                     };
                 })
+            }
+            else{
+                console.log("Ya existe el micrófono.");
             }
         });
 
