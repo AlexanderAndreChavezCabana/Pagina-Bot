@@ -86,136 +86,136 @@
                 
                 btn_microphone.appendChild(imagen_microphone);
                 div_microphone.insertAdjacentElement("beforeend", btn_microphone);
-            }
-
-            // color sendIcon replace
-            var sheet1 = new CSSStyleSheet;
-            sheet1.replaceSync(`#sendIcon:hover { fill: white; }`);
-
-            // color sendIcon insert
-            var sheet3 = new CSSStyleSheet;
-            sheet3.insertRule(`#sendIcon:hover { box-shadow: 1px 1px 2px 2px #ddd; transition: 400ms; border: 0.8px}`);
-
-            // background user message insert
-            var sheet5 = new CSSStyleSheet;
-            sheet5.insertRule(`#messageList .message.user-message { color: white; background: linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(37, 99, 235) 100%) } `);
             
-            // background chat
-            var sheet6 = new CSSStyleSheet;
-            sheet6.insertRule(`#messageList { background: white; } `);
-            
-            // background bot message
-            var sheet7 = new CSSStyleSheet;
-            sheet7.insertRule(`#messageList .message.bot-message { color: rgb(6, 19, 43); background: rgb(239, 246, 255); } `);
-            $r5.shadowRoot.adoptedStyleSheets = [sheet5, sheet6, sheet7];
 
-            
-            // color sendIcon insert
-            var sheet2 = new CSSStyleSheet;
-            sheet2.insertRule(`#sendIcon { background: linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(37, 99, 235) 100%); border-radius: 3px; box-shadow: 0.5px 0.5px 1.5px 1.5px #ddd;}`);
-            $r4.shadowRoot.adoptedStyleSheets = [sheet1, sheet2, sheet3];
-            
-            var sheet4 = new CSSStyleSheet;
-
-            // Definir la animación y los estilos del botón
-            const animationName = 'blink';
-            const animationDefinition = `
-                @keyframes ${animationName} {
-                0% { box-shadow: rgb(28, 68, 100, 0.35) 0px 0px 9px, rgb(28, 68, 100, 0.40) 0px 0px 10px, rgb(28, 68, 100, 0.45) 0px 0px 9px; }
-                50% { box-shadow: rgb(28, 68, 100, 0.20) 0px 0px 3px, rgb(28, 68, 100, 0.20) 0px 0px 3px, rgb(28, 68, 100, 0.20) 0px 0px 3px; }
-                100% { box-shadow: rgb(28, 68, 100, 0.35) 0px 0px 9px, rgb(28, 68, 100, 0.40) 0px 0px 9px, rgb(28, 68, 100, 0.45) 0px 0px 9px; }
-            }`;
-            const buttonStyle = `
-                button#widgetIcon {
-                    background: linear-gradient(135deg, rgb(37, 99, 235) 0%, rgb(30, 64, 175) 100%);
-                    border: none;
-                    box-shadow: rgb(28, 68, 100, 0.35) 0px 0px 9px, rgb(28, 68, 100, 0.4) 0px 0px 9px, rgb(28, 68, 100, 0.45) 0px 0px 9px;
-                    animation: ${animationName} 4s linear infinite;
-                    height: 70px; /* Nuevo tamaño */
-                    width: 70px; /* Nuevo tamaño */
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    }`;
-
-            // Estilos para centrar .df-chat-icon dentro de #widgetIcon
-            const chatIconStyle = `
-                button#widgetIcon .df-chat-icon {
-                    position: absolute;    /* Posicionamiento absoluto respecto a su contenedor relativo */
-                    top: 50%;             /* Posicionamiento del 50% desde la parte superior del contenedor */
-                    left: 50%;            /* Posicionamiento del 50% desde el lado izquierdo del contenedor */
-                    transform: translate(-50%, -50%); /* Desplazamiento hacia atrás en X y Y en un 50% para centrar el elemento */
-                    height: 45px;
-                    width: 45px;
-                    transition: opacity 0.5s;
-                    padding-bottom: 6px;
-                }
-            `;
-
-            const closeSvgStyle = `
-                button#widgetIcon div #closeSvg {
-                    position: static;
-                }
-            `;
-
-
-            // Agregar la animación y los estilos al stylesheet
-            // sheet4.replaceSync(animationDefinition + buttonStyle);
-            // Definir la animación de giro
-            const rotateAnimationName = 'rotateY';
-            const rotateAnimationDefinition = `
-                @keyframes ${rotateAnimationName} {
-                    0%, 40% { transform: rotateY(0deg); }
-                    60%, 100% { transform: rotateY(180deg); }
+                // color sendIcon replace
+                var sheet1 = new CSSStyleSheet;
+                sheet1.replaceSync(`#sendIcon:hover { fill: white; }`);
+    
+                // color sendIcon insert
+                var sheet3 = new CSSStyleSheet;
+                sheet3.insertRule(`#sendIcon:hover { box-shadow: 1px 1px 2px 2px #ddd; transition: 400ms; border: 0.8px}`);
+    
+                // background user message insert
+                var sheet5 = new CSSStyleSheet;
+                sheet5.insertRule(`#messageList .message.user-message { color: white; background: linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(37, 99, 235) 100%) } `);
+                
+                // background chat
+                var sheet6 = new CSSStyleSheet;
+                sheet6.insertRule(`#messageList { background: white; } `);
+                
+                // background bot message
+                var sheet7 = new CSSStyleSheet;
+                sheet7.insertRule(`#messageList .message.bot-message { color: rgb(6, 19, 43); background: rgb(239, 246, 255); } `);
+                $r5.shadowRoot.adoptedStyleSheets = [sheet5, sheet6, sheet7];
+    
+                
+                // color sendIcon insert
+                var sheet2 = new CSSStyleSheet;
+                sheet2.insertRule(`#sendIcon { background: linear-gradient(135deg, rgb(59, 130, 246) 0%, rgb(37, 99, 235) 100%); border-radius: 3px; box-shadow: 0.5px 0.5px 1.5px 1.5px #ddd;}`);
+                $r4.shadowRoot.adoptedStyleSheets = [sheet1, sheet2, sheet3];
+                
+                var sheet4 = new CSSStyleSheet;
+    
+                // Definir la animación y los estilos del botón
+                const animationName = 'blink';
+                const animationDefinition = `
+                    @keyframes ${animationName} {
+                    0% { box-shadow: rgb(28, 68, 100, 0.35) 0px 0px 9px, rgb(28, 68, 100, 0.40) 0px 0px 10px, rgb(28, 68, 100, 0.45) 0px 0px 9px; }
+                    50% { box-shadow: rgb(28, 68, 100, 0.20) 0px 0px 3px, rgb(28, 68, 100, 0.20) 0px 0px 3px, rgb(28, 68, 100, 0.20) 0px 0px 3px; }
+                    100% { box-shadow: rgb(28, 68, 100, 0.35) 0px 0px 9px, rgb(28, 68, 100, 0.40) 0px 0px 9px, rgb(28, 68, 100, 0.45) 0px 0px 9px; }
                 }`;
-
-            // Agregar la animación al botón
-            const buttonRotateStyle = `
-                button#widgetIcon {
-                    animation: ${animationName} 5s linear infinite, ${rotateAnimationName} 50s linear infinite;
-            }`;
-
-            // Agregar la nueva animación y los estilos al stylesheet
-            sheet4.replaceSync(animationDefinition + buttonStyle + chatIconStyle + rotateAnimationDefinition + buttonRotateStyle + closeSvgStyle);
-
-            $r1.shadowRoot.adoptedStyleSheets = [sheet4];
+                const buttonStyle = `
+                    button#widgetIcon {
+                        background: linear-gradient(135deg, rgb(37, 99, 235) 0%, rgb(30, 64, 175) 100%);
+                        border: none;
+                        box-shadow: rgb(28, 68, 100, 0.35) 0px 0px 9px, rgb(28, 68, 100, 0.4) 0px 0px 9px, rgb(28, 68, 100, 0.45) 0px 0px 9px;
+                        animation: ${animationName} 4s linear infinite;
+                        height: 70px; /* Nuevo tamaño */
+                        width: 70px; /* Nuevo tamaño */
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        }`;
+    
+                // Estilos para centrar .df-chat-icon dentro de #widgetIcon
+                const chatIconStyle = `
+                    button#widgetIcon .df-chat-icon {
+                        position: absolute;    /* Posicionamiento absoluto respecto a su contenedor relativo */
+                        top: 50%;             /* Posicionamiento del 50% desde la parte superior del contenedor */
+                        left: 50%;            /* Posicionamiento del 50% desde el lado izquierdo del contenedor */
+                        transform: translate(-50%, -50%); /* Desplazamiento hacia atrás en X y Y en un 50% para centrar el elemento */
+                        height: 45px;
+                        width: 45px;
+                        transition: opacity 0.5s;
+                        padding-bottom: 6px;
+                    }
+                `;
+    
+                const closeSvgStyle = `
+                    button#widgetIcon div #closeSvg {
+                        position: static;
+                    }
+                `;
+    
+    
+                // Agregar la animación y los estilos al stylesheet
+                // sheet4.replaceSync(animationDefinition + buttonStyle);
+                // Definir la animación de giro
+                const rotateAnimationName = 'rotateY';
+                const rotateAnimationDefinition = `
+                    @keyframes ${rotateAnimationName} {
+                        0%, 40% { transform: rotateY(0deg); }
+                        60%, 100% { transform: rotateY(180deg); }
+                    }`;
+    
+                // Agregar la animación al botón
+                const buttonRotateStyle = `
+                    button#widgetIcon {
+                        animation: ${animationName} 5s linear infinite, ${rotateAnimationName} 50s linear infinite;
+                }`;
+    
+                // Agregar la nueva animación y los estilos al stylesheet
+                sheet4.replaceSync(animationDefinition + buttonStyle + chatIconStyle + rotateAnimationDefinition + buttonRotateStyle + closeSvgStyle);
+    
+                $r1.shadowRoot.adoptedStyleSheets = [sheet4];
            
-            //btn micro
-            btn_microphone.addEventListener('click',function(){
-                var speech = true;
-                window.SpeechRecognition = window.webkitSpeechRecognition;
-
-                const recognition = new SpeechRecognition();
-                recognition.lang = "es-PE"
-                recognition.interimResults = true;
-                
-                recognition.addEventListener('result', e => {
-                    const transcript = Array.from(e.results)
-                        .map(result => result[0])
-                        .map(result => result.transcript)
-                        .join('')
-                   
-                    $r9.value = transcript;
-                    $r8.className = "input-box-wrapper valid";
-                    $r9.focus();
-                    console.log(transcript);
-                });
-                
-                if (speech == true) {
-                    recognition.start();
-                    imagen_microphone.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/google_voz_active.gif?alt=media&token=4adc07df-3ad2-4260-88d4-1d6303c353b5';
-                }
-
-                recognition.onend = () => {
-                    imagen_microphone.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/voz-de-google.png?alt=media&token=ec2eb92c-be71-4d62-86cd-2d3580d9d0e7';
-                    var ev = document.createEvent('Event');
-                    ev.initEvent('keypress');
-                    ev.which = ev.keyCode = 13;
-                    $r9.dispatchEvent(ev);
-                
-                };
-            })
-
+                //btn micro
+                btn_microphone.addEventListener('click',function(){
+                    var speech = true;
+                    window.SpeechRecognition = window.webkitSpeechRecognition;
+    
+                    const recognition = new SpeechRecognition();
+                    recognition.lang = "es-PE"
+                    recognition.interimResults = true;
+                    
+                    recognition.addEventListener('result', e => {
+                        const transcript = Array.from(e.results)
+                            .map(result => result[0])
+                            .map(result => result.transcript)
+                            .join('')
+                       
+                        $r9.value = transcript;
+                        $r8.className = "input-box-wrapper valid";
+                        $r9.focus();
+                        console.log(transcript);
+                    });
+                    
+                    if (speech == true) {
+                        recognition.start();
+                        imagen_microphone.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/google_voz_active.gif?alt=media&token=4adc07df-3ad2-4260-88d4-1d6303c353b5';
+                    }
+    
+                    recognition.onend = () => {
+                        imagen_microphone.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/voz-de-google.png?alt=media&token=ec2eb92c-be71-4d62-86cd-2d3580d9d0e7';
+                        var ev = document.createEvent('Event');
+                        ev.initEvent('keypress');
+                        ev.which = ev.keyCode = 13;
+                        $r9.dispatchEvent(ev);
+                    
+                    };
+                })
+            }
         });
 
     });
