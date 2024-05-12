@@ -183,7 +183,7 @@
     
                 // Agregar la nueva animación y los estilos al stylesheet
                 // sheet4.replaceSync(animationDefinition + buttonStyle + chatIconStyle + rotateAnimationDefinition + buttonRotateStyle + closeSvgStyle);
-                sheet4.replaceSync(animationDefinition + buttonStyle + chatIconStyle + rotateAnimationDefinition + closeSvgStyle);
+                sheet4.replaceSync(animationDefinition + buttonStyle + chatIconStyle + closeSvgStyle);
                 $r1.shadowRoot.adoptedStyleSheets = [sheet4];
            
                 //btn micro
