@@ -44,7 +44,7 @@
                 
                 let angle = 0;
                 let direction = 1;
-    
+                /*
                 function rotateImage() {
                     angle = angle + direction * 0.01;
                     if (angle > 0.2 || angle < -0.2) {
@@ -52,7 +52,7 @@
                     }
                     imagen_bot.style.transform = `rotate(${angle}rad)`;
                     requestAnimationFrame(rotateImage);
-                }
+                } */
     
                 // Añade un efecto de "hover" que hace que la imagen parezca que se levanta cuando se pasa el ratón sobre ella.
                 imagen_bot.addEventListener('mouseover', function() {
@@ -167,6 +167,7 @@
                 // Agregar la animación y los estilos al stylesheet
                 // sheet4.replaceSync(animationDefinition + buttonStyle);
                 // Definir la animación de giro
+                /*
                 const rotateAnimationName = 'rotateY';
                 const rotateAnimationDefinition = `
                     @keyframes ${rotateAnimationName} {
@@ -178,11 +179,11 @@
                 const buttonRotateStyle = `
                     button#widgetIcon {
                         animation: ${animationName} 5s linear infinite, ${rotateAnimationName} 50s linear infinite;
-                }`;
+                }`; */
     
                 // Agregar la nueva animación y los estilos al stylesheet
-                sheet4.replaceSync(animationDefinition + buttonStyle + chatIconStyle + rotateAnimationDefinition + buttonRotateStyle + closeSvgStyle);
-    
+                // sheet4.replaceSync(animationDefinition + buttonStyle + chatIconStyle + rotateAnimationDefinition + buttonRotateStyle + closeSvgStyle);
+                sheet4.replaceSync(animationDefinition + buttonStyle + chatIconStyle + rotateAnimationDefinition + closeSvgStyle);
                 $r1.shadowRoot.adoptedStyleSheets = [sheet4];
            
                 //btn micro
