@@ -63,7 +63,7 @@
                     imagen_bot.style.transform = 'scale(1) rotate(' + angle + 'rad)';
                 });
     
-                rotateImage();
+                // rotateImage();
                 console.log("Se cargo la imagen del bot");
             }
             else
