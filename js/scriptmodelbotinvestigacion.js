@@ -64,11 +64,11 @@
                 });
     
                 // rotateImage();
-                console.log("Se cargo la imagen del bot");
+                // console.log("Se cargo la imagen del bot");
             }
             else
             {
-                console.log("Ya existe");
+                // console.log("Ya existe");
             }
 
             // Verifica si ya existe el div para el micrófono
@@ -91,7 +91,7 @@
                 
                 btn_microphone.appendChild(imagen_microphone);
                 div_microphone.insertAdjacentElement("beforeend", btn_microphone);
-                console.log("Se creo la división del micrófono");
+                // console.log("Se creo la división del micrófono");
 
                 // color sendIcon replace
                 var sheet1 = new CSSStyleSheet;
@@ -204,7 +204,7 @@
                         $r9.value = transcript;
                         $r8.className = "input-box-wrapper valid";
                         $r9.focus();
-                        console.log(transcript);
+                        // console.log(transcript);
                     });
                     
                     if (speech == true) {
@@ -223,7 +223,7 @@
                 })
             }
             else{
-                console.log("Ya existe el micrófono.");
+                // console.log("Ya existe el micrófono.");
             }
         });
 
