@@ -12,6 +12,25 @@
             $r8 = $r4.shadowRoot.querySelector(".input-container .input-box-wrapper");
             $r9 = $r4.shadowRoot.querySelector(".input-container .input-box-wrapper input");
 
+            if (dfMessenger) {
+                // Navigate through the shadow DOM to the desired location
+                const chat = dfMessenger.shadowRoot.querySelector('df-messenger-chat');
+                if (chat) {
+                    const chatShadowRoot = chat.shadowRoot;
+                    const widgetIcon = chatShadowRoot.querySelector('button#widgetIcon');
+                    if (widgetIcon) {
+                        // Define the new HTML content to insert
+                        const cloudDivHTML = `
+                            <div style="position: absolute; top: -80px; transform: translateX(-50%); z-index: 100;" class="cloud">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/giphy.gif?alt=media&token=2d8e15a6-dc9f-4ccd-a0f7-99fb0dc7ab93" alt="Nube flotante" class="cloud-image" style="width: 150px; height: auto;">
+                            </div>`;
+                        
+                        // Insert the new HTML content after widgetIcon
+                        widgetIcon.insertAdjacentHTML('afterend', cloudDivHTML);
+                    }
+                }
+            }
+            
             // Height
             const nonMobileMinWidth = 501; // Breakpoint where DF Messenger switches between mobile/non-mobile styles
             style.textContent = '@media screen and (min-width: ' + nonMobileMinWidth + 'px) { .chat-wrapper { max-height: 80%; }';
