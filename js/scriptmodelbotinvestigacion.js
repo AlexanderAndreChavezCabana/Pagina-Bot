@@ -289,11 +289,11 @@
                         ev.which = ev.keyCode = 13;
                         $r9.dispatchEvent(ev);
     
-                        // Desactivar el sonido después de 5 segundos
+                        // Desactivar el sonido después de un tiempo aleatorio entre 3 y 10 segundos
                         setTimeout(() => {
                             audio.pause();
                             audio.currentTime = 0; // Reiniciar el sonido
-                        }, 5000);
+                        }, Math.random() * 7000 + 3000);
                     } else {
                         audio.pause();
                         audio.currentTime = 0; // Reiniciar el sonido
@@ -311,6 +311,9 @@
                     ev.initEvent('keypress');
                     ev.which = ev.keyCode = 13;
                     $r9.dispatchEvent(ev);
+    
+                    // Reproducir el sonido una vez después de un tiempo aleatorio entre 3 y 10 segundos
+                    setTimeout(playSoundOnce, Math.random() * 7000 + 3000);
                 }
     
                 sendInitialMessage(); // Llamar a la función para enviar el mensaje inicial
