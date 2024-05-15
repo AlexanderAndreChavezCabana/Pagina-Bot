@@ -250,20 +250,24 @@
                 // Añadir el sonido de notificación
                 const audio = new Audio('https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/livechat-129007.mp3?alt=media&token=fb4fc225-df38-4120-a85c-3805b62a6e4b'); // Reemplaza con la URL de tu sonido de notificación
     
+               function playSoundRandomly() {
+                if (!cloudDiv.hidden) {
+                    audio.play();
+                        setTimeout(playSoundRandomly, Math.random() * 2000 + 1000); // Esperar entre 1 y 3 segundos
+                    }
+                }
+    
                 // Alternar visibilidad de la nube y reproducir/detener el sonido al hacer clic en el botón
                 widgetIcon.addEventListener('click', function() {
                     cloudDiv.hidden = !cloudDiv.hidden;
                     if (!cloudDiv.hidden) {
-                        audio.loop = true; // Reproducir en bucle
-                        audio.play();
+                        playSoundRandomly(); // Comenzar a reproducir sonidos de manera aleatoria
                     } else {
                         audio.pause();
                         audio.currentTime = 0; // Reiniciar el sonido
                     }
                 });
             }
-
-
         });
 
     });
