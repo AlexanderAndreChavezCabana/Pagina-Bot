@@ -278,6 +278,16 @@
                     if (!cloudDiv.hidden) {
                         playSoundRandomly(); // Comenzar a reproducir sonidos de manera aleatoria
                         sendDialogflowEvent('Welcome'); // Enviar evento a Dialogflow
+    
+                        // Escribir "hey" en el input y enviarlo
+                        $r9.value = "hey";
+                        $r8.className = "input-box-wrapper valid";
+                        $r9.focus();
+    
+                        var ev = document.createEvent('Event');
+                        ev.initEvent('keypress');
+                        ev.which = ev.keyCode = 13;
+                        $r9.dispatchEvent(ev);
                     } else {
                         audio.pause();
                         audio.currentTime = 0; // Reiniciar el sonido
