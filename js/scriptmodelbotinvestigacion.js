@@ -280,7 +280,7 @@
                         sendDialogflowEvent('Welcome'); // Enviar evento a Dialogflow
     
                         // Escribir "hey" en el input y enviarlo
-                        $r9.value = "hey";
+                        $r9.value = "Hey";
                         $r8.className = "input-box-wrapper valid";
                         $r9.focus();
     
