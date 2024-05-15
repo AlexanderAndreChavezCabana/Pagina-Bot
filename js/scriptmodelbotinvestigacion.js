@@ -225,6 +225,23 @@
             else{
                 // console.log("Ya existe el micrófono.");
             }
+            
+            // Adding the new cloud div inside the widgetIcon button
+            const widgetIcon = dfMessenger.shadowRoot.querySelector('#widgetIcon');
+            if (widgetIcon) {
+                const cloudDiv = document.createElement('div');
+                cloudDiv.className = 'cloud';
+                cloudDiv.style = 'position: absolute; top:-80px; left: 50%; transform: translateX(-50%); z-index: 100; background-color: rgba(173, 216, 230, 0.6); border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); padding: 10px;';
+    
+                const cloudImage = document.createElement('img');
+                cloudImage.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/giphy.gif?alt=media&token=2d8e15a6-dc9f-4ccd-a0f7-99fb0dc7ab93';
+                cloudImage.alt = 'Nube flotante';
+                cloudImage.className = 'cloud-image';
+                cloudImage.style = 'width: 100px; height: auto;';
+    
+                cloudDiv.appendChild(cloudImage);
+                widgetIcon.insertAdjacentElement('afterbegin', cloudDiv);
+            }
         });
 
     });
