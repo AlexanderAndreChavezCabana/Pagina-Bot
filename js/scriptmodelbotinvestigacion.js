@@ -241,12 +241,14 @@
     
                 cloudDiv.appendChild(cloudImage);
                 widgetIcon.insertAdjacentElement('afterbegin', cloudDiv);
+
+                // Toggle cloud visibility on button click
+                widgetIcon.addEventListener('click', function() {
+                    cloudDiv.hidden = !cloudDiv.hidden;
+                });
             }
 
-            // Toggle cloud visibility on button click
-            widgetIcon.addEventListener('click', function() {
-                cloudDiv.hidden = !cloudDiv.hidden;
-            });
+
         });
 
     });
