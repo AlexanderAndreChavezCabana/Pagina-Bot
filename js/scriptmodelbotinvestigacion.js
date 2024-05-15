@@ -251,6 +251,7 @@
                         setTimeout(playSoundRandomly, Math.random() * 2000 + 1000); // Esperar entre 1 y 3 segundos
                     }
                 }
+                
                 // Función para enviar un evento al agente de Dialogflow
                 function sendDialogflowEvent(eventName) {
                     const dfMessengerChat = dfMessenger.shadowRoot.querySelector('df-messenger-chat');
@@ -260,8 +261,8 @@
                             languageCode: 'es'
                         }
                     });
-                    console.log("Despachando evento: ", eventName);
-                    dfMessengerChat.dispatchEvent(eventMessage);
+                console.log("Despachando evento: ", eventName);
+                dfMessengerChat.dispatchEvent(eventMessage);
                     console.log("Evento despachado: ", eventMessage);
                 }
     
@@ -279,7 +280,7 @@
                         playSoundRandomly(); // Comenzar a reproducir sonidos de manera aleatoria
                         sendDialogflowEvent('Welcome'); // Enviar evento a Dialogflow
     
-                        // Escribir "hey" en el input y enviarlo
+                        // Escribir "Hey" en el input y enviarlo
                         $r9.value = "Hey";
                         $r8.className = "input-box-wrapper valid";
                         $r9.focus();
@@ -293,6 +294,21 @@
                         audio.currentTime = 0; // Reiniciar el sonido
                     }
                 });
+    
+                // Enviar automáticamente el mensaje "Hey" al cargar la página
+                function sendInitialMessage() {
+                    // Escribir "Hey" en el input y enviarlo
+                    $r9.value = "Hey";
+                    $r8.className = "input-box-wrapper valid";
+                    $r9.focus();
+    
+                    var ev = document.createEvent('Event');
+                    ev.initEvent('keypress');
+                    ev.which = ev.keyCode = 13;
+                    $r9.dispatchEvent(ev);
+                }
+    
+                sendInitialMessage(); // Llamar a la función para enviar el mensaje inicial
             }
         });
 
