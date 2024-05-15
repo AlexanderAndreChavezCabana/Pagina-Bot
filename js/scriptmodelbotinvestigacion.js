@@ -246,6 +246,21 @@
                 widgetIcon.addEventListener('click', function() {
                     cloudDiv.hidden = !cloudDiv.hidden;
                 });
+
+                // Añadir el sonido de notificación
+                const audio = new Audio('https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/livechat-129007.mp3?alt=media&token=fb4fc225-df38-4120-a85c-3805b62a6e4b'); // Reemplaza con la URL de tu sonido de notificación
+    
+                // Alternar visibilidad de la nube y reproducir/detener el sonido al hacer clic en el botón
+                widgetIcon.addEventListener('click', function() {
+                    cloudDiv.hidden = !cloudDiv.hidden;
+                    if (!cloudDiv.hidden) {
+                        audio.loop = true; // Reproducir en bucle
+                        audio.play();
+                    } else {
+                        audio.pause();
+                        audio.currentTime = 0; // Reiniciar el sonido
+                    }
+                });
             }
 
 
