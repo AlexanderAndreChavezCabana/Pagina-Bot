@@ -245,13 +245,6 @@
                 // Añadir el sonido de notificación
                 const audio = new Audio('https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/livechat-129007.mp3?alt=media&token=fb4fc225-df38-4120-a85c-3805b62a6e4b'); // Reemplaza con la URL de tu sonido de notificación
     
-               function playSoundRandomly() {
-                    if (!cloudDiv.hidden) {
-                        audio.play();
-                        setTimeout(playSoundRandomly, Math.random() * 10000 + 8000); // Esperar entre 1 y 3 segundos
-                    }
-                }
-    
                 // Función para enviar un evento al agente de Dialogflow
                 function sendDialogflowEvent(eventName) {
                     const dfMessengerChat = dfMessenger.shadowRoot.querySelector('df-messenger-chat');
@@ -261,8 +254,17 @@
                             languageCode: 'es'
                         }
                     });
+                    console.log("Despachando evento: ", eventName);
                     dfMessengerChat.dispatchEvent(eventMessage);
+                    console.log("Evento despachado: ", eventMessage);
                 }
+    
+                // Asegurarse de que el chat esté listo antes de despachar el evento
+                dfMessenger.addEventListener('event', function(event) {
+                    if (event.detail.event === 'Welcome') {
+                        console.log("Evento 'Welcome' recibido en el componente df-messenger-chat.");
+                    }
+                });
     
                 // Alternar visibilidad de la nube, reproducir/detener el sonido y activar el evento de Dialogflow al hacer clic en el botón
                 widgetIcon.addEventListener('click', function() {
