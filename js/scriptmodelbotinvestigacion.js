@@ -246,9 +246,7 @@
                 const audio = new Audio('https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/livechat-129007.mp3?alt=media&token=fb4fc225-df38-4120-a85c-3805b62a6e4b'); // Reemplaza con la URL de tu sonido de notificación
     
                 function playSoundOnce() {
-                    if (!cloudDiv.hidden) {
-                        audio.play();
-                    }
+                    audio.play();
                 }
     
                 // Función para enviar un evento al agente de Dialogflow
@@ -272,11 +270,10 @@
                     }
                 });
     
-                // Alternar visibilidad de la nube, reproducir/detener el sonido y activar el evento de Dialogflow al hacer clic en el botón
+                // Alternar visibilidad de la nube y activar el evento de Dialogflow al hacer clic en el botón
                 widgetIcon.addEventListener('click', function() {
                     cloudDiv.hidden = !cloudDiv.hidden;
                     if (!cloudDiv.hidden) {
-                        playSoundOnce(); // Reproducir el sonido una vez
                         sendDialogflowEvent('Welcome'); // Enviar evento a Dialogflow
     
                         // Desactivar el sonido después de un tiempo aleatorio entre 2 y 10 segundos
@@ -285,8 +282,8 @@
                             audio.currentTime = 0; // Reiniciar el sonido
                         }, Math.random() * 8000 + 2000);
                     } else {
-                        audio.pause();
-                        audio.currentTime = 0; // Reiniciar el sonido
+                        // Reproducir el sonido una vez después de un tiempo aleatorio entre 2 y 10 segundos al ocultar la nube
+                        setTimeout(playSoundOnce, Math.random() * 8000 + 2000);
                     }
                 });
     
@@ -305,7 +302,7 @@
     
                 sendInitialMessage(); // Llamar a la función para enviar el mensaje inicial
     
-                // Reproducir el sonido una vez después de un tiempo aleatorio entre 2 y 10 segundos
+                // Reproducir el sonido una vez después de un tiempo aleatorio entre 2 y 10 segundos al cargar la página
                 setTimeout(playSoundOnce, Math.random() * 8000 + 2000);
             }
         });
