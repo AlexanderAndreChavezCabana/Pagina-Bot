@@ -242,26 +242,29 @@
                 cloudDiv.appendChild(cloudImage);
                 widgetIcon.insertAdjacentElement('afterbegin', cloudDiv);
 
-                // Toggle cloud visibility on button click
-                widgetIcon.addEventListener('click', function() {
-                    cloudDiv.hidden = !cloudDiv.hidden;
-                });
-
                 // Añadir el sonido de notificación
                 const audio = new Audio('https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/livechat-129007.mp3?alt=media&token=fb4fc225-df38-4120-a85c-3805b62a6e4b'); // Reemplaza con la URL de tu sonido de notificación
     
                function playSoundRandomly() {
-                if (!cloudDiv.hidden) {
-                    audio.play();
-                        setTimeout(playSoundRandomly, Math.random() * 2000 + 1000); // Esperar entre 1 y 3 segundos
+                    if (!cloudDiv.hidden) {
+                        audio.play();
+                        setTimeout(playSoundRandomly, Math.random() * 10000 + 8000); // Esperar entre 1 y 3 segundos
                     }
                 }
     
-                // Alternar visibilidad de la nube y reproducir/detener el sonido al hacer clic en el botón
+                // Función para enviar un evento al agente de Dialogflow
+                function sendDialogflowEvent(eventName) {
+                    const customEvent = new Event('event');
+                    customEvent.data = { event: eventName, language: 'es' };
+                    dfMessenger.shadowRoot.querySelector('df-messenger-chat').dispatchEvent(customEvent);
+                }
+    
+                // Alternar visibilidad de la nube, reproducir/detener el sonido y activar el evento de Dialogflow al hacer clic en el botón
                 widgetIcon.addEventListener('click', function() {
                     cloudDiv.hidden = !cloudDiv.hidden;
                     if (!cloudDiv.hidden) {
                         playSoundRandomly(); // Comenzar a reproducir sonidos de manera aleatoria
+                        sendDialogflowEvent('Welcome'); // Enviar evento a Dialogflow
                     } else {
                         audio.pause();
                         audio.currentTime = 0; // Reiniciar el sonido
