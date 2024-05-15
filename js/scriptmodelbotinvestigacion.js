@@ -245,7 +245,26 @@
                 // Añadir el sonido de notificación
                 const audio = new Audio('https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/livechat-129007.mp3?alt=media&token=fb4fc225-df38-4120-a85c-3805b62a6e4b'); // Reemplaza con la URL de tu sonido de notificación
 
-                function playSoundOnce() {
+                // Añadiendo el nuevo div de la nube dentro del botón widgetIcon
+        const widgetIcon = dfMessenger.shadowRoot.querySelector('#widgetIcon');
+        if (widgetIcon) {
+            const cloudDiv = document.createElement('div');
+            cloudDiv.className = 'cloud';
+            cloudDiv.style = 'position: absolute; top:-80px; transform: translateX(-50%); z-index: 100;';
+
+            const cloudImage = document.createElement('img');
+            cloudImage.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/giphy.gif?alt=media&token=2d8e15a6-dc9f-4ccd-a0f7-99fb0dc7ab93';
+            cloudImage.alt = 'Nube flotante';
+            cloudImage.className = 'cloud-image';
+            cloudImage.style = 'width: 100px; height: auto;';
+
+            cloudDiv.appendChild(cloudImage);
+            widgetIcon.insertAdjacentElement('afterbegin', cloudDiv);
+
+            // Añadir el sonido de notificación
+            const audio = new Audio('https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/livechat-129007.mp3?alt=media&token=fb4fc225-df38-4120-a85c-3805b62a6e4b'); // Reemplaza con la URL de tu sonido de notificación
+
+             function playSoundOnce() {
                     if (!cloudDiv.hidden) {
                         audio.play();
                     }
@@ -272,8 +291,6 @@
                     }
                 });
     
-                let initialInteraction = true; // Variable para controlar la interacción inicial
-    
                 // Alternar visibilidad de la nube, reproducir/detener el sonido y activar el evento de Dialogflow al hacer clic en el botón
                 widgetIcon.addEventListener('click', function() {
                     cloudDiv.hidden = !cloudDiv.hidden;
@@ -281,25 +298,11 @@
                         playSoundOnce(); // Reproducir el sonido una vez
                         sendDialogflowEvent('Welcome'); // Enviar evento a Dialogflow
     
-                        if (initialInteraction) {
-                            // Escribir "Hey" en el input y enviarlo solo en la primera interacción
-                            $r9.value = "Hey";
-                            $r8.className = "input-box-wrapper valid";
-                            $r9.focus();
-    
-                            var ev = document.createEvent('Event');
-                            ev.initEvent('keypress');
-                            ev.which = ev.keyCode = 13;
-                            $r9.dispatchEvent(ev);
-    
-                            initialInteraction = false; // Desactivar la interacción inicial
-                        }
-    
-                        // Desactivar el sonido después de un tiempo aleatorio entre 3 y 10 segundos
+                        // Desactivar el sonido después de un tiempo aleatorio entre 2 y 10 segundos
                         setTimeout(() => {
                             audio.pause();
                             audio.currentTime = 0; // Reiniciar el sonido
-                        }, Math.random() * 7000 + 3000);
+                        }, Math.random() * 8000 + 2000);
                     } else {
                         audio.pause();
                         audio.currentTime = 0; // Reiniciar el sonido
@@ -317,12 +320,12 @@
                     ev.initEvent('keypress');
                     ev.which = ev.keyCode = 13;
                     $r9.dispatchEvent(ev);
-    
-                    // Reproducir el sonido una vez después de un tiempo aleatorio entre 3 y 10 segundos
-                    setTimeout(playSoundOnce, Math.random() * 7000 + 3000);
                 }
     
                 sendInitialMessage(); // Llamar a la función para enviar el mensaje inicial
+    
+                // Reproducir el sonido una vez después de un tiempo aleatorio entre 2 y 10 segundos
+                setTimeout(playSoundOnce, Math.random() * 8000 + 2000);
             }
         });
 
