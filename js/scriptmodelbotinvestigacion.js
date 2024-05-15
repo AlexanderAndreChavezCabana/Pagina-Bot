@@ -254,25 +254,14 @@
     
                 // Función para enviar un evento al agente de Dialogflow
                 function sendDialogflowEvent(eventName) {
-                fetch('https://dialogflow.googleapis.com/v2/projects/your-project-id/agent/sessions/your-session-id:detectIntent', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': 'Bearer your-access-token'
-                        },
-                        body: JSON.stringify({
-                            queryInput: {
-                                event: {
-                                    name: eventName,
-                                    languageCode: 'es'
-                                }
-                            }
-                        })
-                    }).then(response => response.json()).then(data => {
-                        console.log('Success:', data);
-                    }).catch((error) => {
-                        console.error('Error:', error);
+                    const dfMessengerChat = dfMessenger.shadowRoot.querySelector('df-messenger-chat');
+                    const eventMessage = new CustomEvent('event', {
+                        detail: {
+                            event: eventName,
+                            languageCode: 'es'
+                        }
                     });
+                    dfMessengerChat.dispatchEvent(eventMessage);
                 }
     
                 // Alternar visibilidad de la nube, reproducir/detener el sonido y activar el evento de Dialogflow al hacer clic en el botón
