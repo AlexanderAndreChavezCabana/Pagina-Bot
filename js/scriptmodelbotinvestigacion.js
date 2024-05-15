@@ -245,13 +245,12 @@
                 // Añadir el sonido de notificación
                 const audio = new Audio('https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/livechat-129007.mp3?alt=media&token=fb4fc225-df38-4120-a85c-3805b62a6e4b'); // Reemplaza con la URL de tu sonido de notificación
 
-                function playSoundRandomly() {
+                function playSoundOnce() {
                     if (!cloudDiv.hidden) {
                         audio.play();
-                        setTimeout(playSoundRandomly, Math.random() * 2000 + 1000); // Esperar entre 1 y 3 segundos
                     }
                 }
-                
+    
                 // Función para enviar un evento al agente de Dialogflow
                 function sendDialogflowEvent(eventName) {
                     const dfMessengerChat = dfMessenger.shadowRoot.querySelector('df-messenger-chat');
@@ -261,8 +260,8 @@
                             languageCode: 'es'
                         }
                     });
-                console.log("Despachando evento: ", eventName);
-                dfMessengerChat.dispatchEvent(eventMessage);
+                    console.log("Despachando evento: ", eventName);
+                    dfMessengerChat.dispatchEvent(eventMessage);
                     console.log("Evento despachado: ", eventMessage);
                 }
     
@@ -277,7 +276,7 @@
                 widgetIcon.addEventListener('click', function() {
                     cloudDiv.hidden = !cloudDiv.hidden;
                     if (!cloudDiv.hidden) {
-                        playSoundRandomly(); // Comenzar a reproducir sonidos de manera aleatoria
+                        playSoundOnce(); // Reproducir el sonido una vez
                         sendDialogflowEvent('Welcome'); // Enviar evento a Dialogflow
     
                         // Escribir "Hey" en el input y enviarlo
@@ -289,6 +288,12 @@
                         ev.initEvent('keypress');
                         ev.which = ev.keyCode = 13;
                         $r9.dispatchEvent(ev);
+    
+                        // Desactivar el sonido después de 5 segundos
+                        setTimeout(() => {
+                            audio.pause();
+                            audio.currentTime = 0; // Reiniciar el sonido
+                        }, 5000);
                     } else {
                         audio.pause();
                         audio.currentTime = 0; // Reiniciar el sonido
