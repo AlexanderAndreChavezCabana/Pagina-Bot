@@ -244,7 +244,13 @@
 
                 // Añadir el sonido de notificación
                 const audio = new Audio('https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/livechat-129007.mp3?alt=media&token=fb4fc225-df38-4120-a85c-3805b62a6e4b'); // Reemplaza con la URL de tu sonido de notificación
-    
+
+                function playSoundRandomly() {
+                    if (!cloudDiv.hidden) {
+                        audio.play();
+                        setTimeout(playSoundRandomly, Math.random() * 2000 + 1000); // Esperar entre 1 y 3 segundos
+                    }
+                }
                 // Función para enviar un evento al agente de Dialogflow
                 function sendDialogflowEvent(eventName) {
                     const dfMessengerChat = dfMessenger.shadowRoot.querySelector('df-messenger-chat');
