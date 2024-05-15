@@ -275,12 +275,6 @@
                     cloudDiv.hidden = !cloudDiv.hidden;
                     if (!cloudDiv.hidden) {
                         sendDialogflowEvent('Welcome'); // Enviar evento a Dialogflow
-    
-                        // Desactivar el sonido después de un tiempo aleatorio entre 2 y 10 segundos
-                        setTimeout(() => {
-                            audio.pause();
-                            audio.currentTime = 0; // Reiniciar el sonido
-                        }, Math.random() * 8000 + 2000);
                     } else {
                         // Reproducir el sonido una vez después de un tiempo aleatorio entre 2 y 10 segundos al ocultar la nube
                         setTimeout(playSoundOnce, Math.random() * 8000 + 2000);
