@@ -226,7 +226,7 @@
                 // console.log("Ya existe el micrófono.");
             }
             
-            // Adding the new cloud div inside the widgetIcon button
+            // Añadiendo el nuevo div de la nube dentro del botón widgetIcon
             const widgetIcon = dfMessenger.shadowRoot.querySelector('#widgetIcon');
             if (widgetIcon) {
                 const cloudDiv = document.createElement('div');
@@ -241,30 +241,11 @@
     
                 cloudDiv.appendChild(cloudImage);
                 widgetIcon.insertAdjacentElement('afterbegin', cloudDiv);
-
+    
                 // Añadir el sonido de notificación
                 const audio = new Audio('https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/livechat-129007.mp3?alt=media&token=fb4fc225-df38-4120-a85c-3805b62a6e4b'); // Reemplaza con la URL de tu sonido de notificación
-
-                // Añadiendo el nuevo div de la nube dentro del botón widgetIcon
-        const widgetIcon = dfMessenger.shadowRoot.querySelector('#widgetIcon');
-        if (widgetIcon) {
-            const cloudDiv = document.createElement('div');
-            cloudDiv.className = 'cloud';
-            cloudDiv.style = 'position: absolute; top:-80px; transform: translateX(-50%); z-index: 100;';
-
-            const cloudImage = document.createElement('img');
-            cloudImage.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/giphy.gif?alt=media&token=2d8e15a6-dc9f-4ccd-a0f7-99fb0dc7ab93';
-            cloudImage.alt = 'Nube flotante';
-            cloudImage.className = 'cloud-image';
-            cloudImage.style = 'width: 100px; height: auto;';
-
-            cloudDiv.appendChild(cloudImage);
-            widgetIcon.insertAdjacentElement('afterbegin', cloudDiv);
-
-            // Añadir el sonido de notificación
-            const audio = new Audio('https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/livechat-129007.mp3?alt=media&token=fb4fc225-df38-4120-a85c-3805b62a6e4b'); // Reemplaza con la URL de tu sonido de notificación
-
-             function playSoundOnce() {
+    
+                function playSoundOnce() {
                     if (!cloudDiv.hidden) {
                         audio.play();
                     }
