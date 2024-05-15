@@ -272,6 +272,8 @@
                     }
                 });
     
+                let initialInteraction = true; // Variable para controlar la interacción inicial
+    
                 // Alternar visibilidad de la nube, reproducir/detener el sonido y activar el evento de Dialogflow al hacer clic en el botón
                 widgetIcon.addEventListener('click', function() {
                     cloudDiv.hidden = !cloudDiv.hidden;
@@ -279,15 +281,19 @@
                         playSoundOnce(); // Reproducir el sonido una vez
                         sendDialogflowEvent('Welcome'); // Enviar evento a Dialogflow
     
-                        // Escribir "Hey" en el input y enviarlo
-                        $r9.value = "Hey";
-                        $r8.className = "input-box-wrapper valid";
-                        $r9.focus();
+                        if (initialInteraction) {
+                            // Escribir "Hey" en el input y enviarlo solo en la primera interacción
+                            $r9.value = "Hey";
+                            $r8.className = "input-box-wrapper valid";
+                            $r9.focus();
     
-                        var ev = document.createEvent('Event');
-                        ev.initEvent('keypress');
-                        ev.which = ev.keyCode = 13;
-                        $r9.dispatchEvent(ev);
+                            var ev = document.createEvent('Event');
+                            ev.initEvent('keypress');
+                            ev.which = ev.keyCode = 13;
+                            $r9.dispatchEvent(ev);
+    
+                            initialInteraction = false; // Desactivar la interacción inicial
+                        }
     
                         // Desactivar el sonido después de un tiempo aleatorio entre 3 y 10 segundos
                         setTimeout(() => {
