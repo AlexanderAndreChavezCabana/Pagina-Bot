@@ -234,7 +234,7 @@
                 cloudDiv.style = 'position: absolute; top:-80px; transform: translateX(-50%); z-index: 100;';
     
                 const cloudImage = document.createElement('img');
-                cloudImage.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/giphy.gif?alt=media&token=2d8e15a6-dc9f-4ccd-a0f7-99fb0dc7ab93';
+                cloudImage.src = 'https://firebasestorage.googleapis.com/v0/b/chatbotsaludmental.appspot.com/o/giphy_v2.gif?alt=media&token=3b642fbc-2f73-4ff9-b8b0-296302170cf0';
                 cloudImage.alt = 'Nube flotante';
                 cloudImage.className = 'cloud-image';
                 cloudImage.style = 'width: 100px; height: auto;';
