@@ -239,19 +239,20 @@
                 cloudImage.className = 'cloud-image';
                 cloudImage.style = 'width: 100px; height: auto;';
 
-                // Media query for mobile devices
-                const mobileStyle = document.createElement('style');
-                mobileStyle.textContent = `
-                    @media screen and (max-width: 500px) {
-                        .cloud {
-                            top: -45px !important;
-                        }
-                        .cloud-image {
-                            width: 60px !important;
-                        }
+                // Ajustar los estilos para móvil
+                function adjustStylesForMobile() {
+                    if (window.innerWidth <= 500) {
+                        cloudDiv.style.top = '-45px';
+                        cloudImage.style.width = '60px';
+                    } else {
+                        cloudDiv.style.top = '-80px';
+                        cloudImage.style.width = '100px';
                     }
-                `;
-                document.head.appendChild(mobileStyle);
+                }
+    
+                // Llamar a la función de ajuste al cargar y al redimensionar la ventana
+                adjustStylesForMobile();
+                window.addEventListener('resize', adjustStylesForMobile);
 
                 
                 cloudDiv.appendChild(cloudImage);
