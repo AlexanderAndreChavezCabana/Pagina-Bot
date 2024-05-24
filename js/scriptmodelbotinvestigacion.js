@@ -90,7 +90,7 @@
                 imagen_microphone.style = "padding-top: 0px;";
                 
                 btn_microphone.appendChild(imagen_microphone);
-                div_microphone.insertAdjacentElement("beforeend", btn_microphone);
+                // div_microphone.insertAdjacentElement("beforeend", btn_microphone);
                 // console.log("Se creo la división del micrófono");
 
                 // color sendIcon replace
