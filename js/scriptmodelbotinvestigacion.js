@@ -75,7 +75,7 @@
             if (!$r7.querySelector('.div-microphone')) {
                 const div_microphone = document.createElement('div');
                 div_microphone.className = 'div-microphone'; 
-                div_microphone.style = "border-top-color: black;background: linear-gradient(135deg, rgb(37 99 235) 0%, rgb(29 78 216) 100%) 0% 0% / 200% 200%;margin: 0 auto; display: flex; justify-content: center; align-items: center;font-size: 15px;font-weight: bold; text-shadow: rgba(0, 0, 0, 0.5) 2px 2px;box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;";
+                div_microphone.style = "border-top-color: black;background: linear-gradient(135deg, rgb(37 99 235) 0%, rgb(29 78 216) 100%) 0% 0% / 200% 200%;margin: 0 auto; display: flex; justify-content: center; align-items: center;font-size: 15px;font-weight: bold; text-shadow: rgba(0, 0, 0, 0.5) 2px 2px;box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;height: 40px;";
                 
                 $r7.insertAdjacentElement("afterend", div_microphone);
                 
