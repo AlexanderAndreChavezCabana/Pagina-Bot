@@ -296,7 +296,21 @@
                         setTimeout(playSoundOnce, Math.random() * 8000 + 2000);
                     }
                 });
+
+                // Añadiendo el nuevo botón "Abrir Chat" con estilo personalizado
+                const chatButton = document.createElement('div');
+                chatButton.style = 'margin-bottom: -20px; background: linear-gradient(135deg, rgb(37, 99, 235) 0%, rgb(30, 64, 175) 100%); color: white; padding: 2px; border-radius: 5px; text-align: center; font-weight: bold; cursor: pointer;';
+                chatButton.textContent = 'Abrir Chat';
     
+                // Inserta el botón "Abrir Chat" justo debajo del widgetIcon
+                widgetIcon.insertAdjacentElement('afterend', chatButton);
+    
+                // Añadir evento de clic al botón "Abrir Chat"
+                chatButton.addEventListener('click', function() {
+                    // Simular el clic en el widgetIcon para abrir el chat
+                    widgetIcon.click();
+                });
+                
                 // Enviar automáticamente el mensaje "Hey" al cargar la página
                 function sendInitialMessage() {
                     // Escribir "Hey" en el input y enviarlo
