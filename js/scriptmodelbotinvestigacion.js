@@ -289,6 +289,7 @@
                 // Alternar visibilidad de la nube y activar el evento de Dialogflow al hacer clic en el botón
                 widgetIcon.addEventListener('click', function() {
                     cloudDiv.hidden = !cloudDiv.hidden;
+                    chatButton.hidden = !cloudDiv.hidden;
                     if (!cloudDiv.hidden) {
                         sendDialogflowEvent('Welcome'); // Enviar evento a Dialogflow
                     } else {
@@ -307,7 +308,6 @@
     
                 // Añadir evento de clic al botón "Abrir Chat"
                 chatButton.addEventListener('click', function() {
-                    // Simular el clic en el widgetIcon para abrir el chat
                     widgetIcon.click();
                 });
                 
