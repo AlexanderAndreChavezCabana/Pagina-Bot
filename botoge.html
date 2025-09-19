@@ -164,32 +164,55 @@
             </div>
         </div>
     </footer>
-
-    <style>
-        df-messenger {
-            --df-messenger-button-titlebar-color: linear-gradient(135deg, rgb(28, 68, 100) 0%, rgb(38, 78, 110) 100%) 0% 0% / 200% 200%;
-            /*--df-messenger-chat-background-color: rgb(255, 255, 255);*/
-            --df-messenger-send-icon: white;
-            --df-messenger-chip-color-text: red;
-            /* chat-icon="https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/ogechatbot.png?alt=media&token=d3846f07-18d8-49f6-a29b-0a84ba64674d" */
-            /* chat-icon="https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/astrobot.gif?alt=media&token=56609aa7-1187-4a9c-a660-4e0201402768" */
-            }  
-    </style>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://kit.fontawesome.com/c15b744a04.js" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/scriptmodelbotogev2.js"></script>
+<!-- 🔹 Contenedor del chatbot -->
+  <div class="container">
+    <!-- Script oficial de Dialogflow -->
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
- 
+
+    <!-- Tu widget con agente real -->
     <df-messenger
-    chat-icon="https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/ogechatbot.png?alt=media&token=d3846f07-18d8-49f6-a29b-0a84ba64674d"
-    intent = "WELCOME"
-    chat-title="OGEBOT"
-    agent-id="62a4fdec-25f9-4f21-a860-6ba96e4ae614"
-    language-code="es"
-    ></df-messenger>
+      chat-icon="https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/ogechatbot.png?alt=media&token=d3846f07-18d8-49f6-a29b-0a84ba64674d"
+      intent="WELCOME"
+      chat-title="OGEBOT"
+      agent-id="62a4fdec-25f9-4f21-a860-6ba96e4ae614"
+      language-code="es">
+    </df-messenger>
+
+    <!-- Estilos para el contenedor y el chat -->
+    <style>
+      .container {
+        background-image: url("img.png");
+        background-repeat: no-repeat;
+        min-height: 940px;
+        height: 100%;
+        margin: 10px 30px;
+      }
+
+      df-messenger {
+        --df-messenger-bot-message: #fff;
+        --df-messenger-user-message: #0041C2;
+        --df-messenger-font-color: #000;
+        --df-messenger-send-icon: white;
+        --df-messenger-chat-background-color: #fafafa;
+        --df-messenger-button-titlebar-color: linear-gradient(
+          135deg,
+          rgb(28, 68, 100) 0%,
+          rgb(38, 78, 110) 100%
+        ) 0% 0% / 200% 200%;
+        --df-messenger-chip-border-color: #0041c2;
+        --df-messenger-chip-color-text: red;
+      }
+    </style>
+  </div>
+
+  <!-- ✅ Scripts de tu proyecto -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://kit.fontawesome.com/c15b744a04.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+  <script type="text/javascript" src="js/scriptmodelbotogev2.js"></script>
    
 </body>
 
 </html>
+
