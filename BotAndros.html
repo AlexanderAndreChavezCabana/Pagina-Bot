@@ -170,15 +170,34 @@
     });
   </script>
 
-  <!-- Componente del bot -->
-  <df-messenger
-    chat-icon="https://firebasestorage.googleapis.com/v0/b/chatbotoge.appspot.com/o/astrobot.gif?alt=media&token=56609aa7-1187-4a9c-a660-4e0201402768"
-    intent="WELCOME"
-    chat-title="OGEBOT"
-    agent-id="8633a84e-531e-49c2-a0ff-dca0b4bc896c"
-    language-code="es">
-  </df-messenger>
+<div class="container">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="test" agent-id="" language-code="en" chat-icon="vest.jpg">
+      <style>
+        .container {
+          background-image: url("img.png");
+          background-repeat: no-repeat;
+          min-height: 940px;
+          height: 100%;
+          margin: 10px 30px;
+        }
+
+        df-messenger {
+          --df-messenger-bot-message: #fff;
+          --df-messenger-button-titlebar-color: #0041C2;
+          --df-messenger-button-titlebar-color: #0041C2;
+          --df-messenger-chat-background-color: #fafafa;
+          --df-messenger-font-color: #000;
+          --df-messenger-send-icon: #00adff;
+          --df-messenger-user-message: #0041C2;
+          --df-messenger-chip-border-color:#0041C2;
+        }
+      </style>
+    </df-messenger>
+
+  </div>
 </body>
 </html>
+
 
 
